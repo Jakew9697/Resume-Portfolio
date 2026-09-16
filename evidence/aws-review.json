@@ -1,0 +1,34 @@
+{
+  "date": "2026-09-16",
+  "scope": "Portfolio hosting and isolated demo services; not an account-wide cost audit",
+  "profile": "sync-admin",
+  "region": "us-east-1",
+  "existingHosting": {
+    "bucket": "sync-static-sites",
+    "distribution": "E1EMVV1XZZTJAS",
+    "prefix": "tenants/jakeworsham/",
+    "wildcardDnsAndTlsVerified": true,
+    "sharedConfigurationChanged": false
+  },
+  "newServices": {
+    "lambda": "jake-portfolio-prod",
+    "dynamodb": "jake-portfolio-prod",
+    "privateAudioBucket": "jake-portfolio-prod-audio-831926606670",
+    "secretLocation": "AWS SSM SecureString",
+    "bedrock": "Claude Haiku 4.5 US inference profile",
+    "speech": "Amazon Polly",
+    "transcription": "Amazon Transcribe",
+    "terraformResources": 10,
+    "devProvisioned": false,
+    "companyDataAccess": false
+  },
+  "limits": {
+    "guestSessionHours": 24,
+    "lambdaConcurrency": 3,
+    "dailyGlobalAiRequests": 400,
+    "dailyGlobalSpeechRequests": 600,
+    "dailyGlobalTranscriptions": 100,
+    "logRetentionDays": 14,
+    "audioLifecycleDays": 1
+  }
+}

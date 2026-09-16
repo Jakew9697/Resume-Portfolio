@@ -1,76 +1,13 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import { Navigation } from "@/components/layout/Navigation";
-import { SITE_CONFIG } from "@/lib/constants";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
+import type { Metadata } from 'next';
+import { Geist, Geist_Mono, Fraunces } from 'next/font/google';
+import './globals.css';
+const geist = Geist({ subsets: ['latin'], variable: '--font-geist' });
+const mono = Geist_Mono({ subsets: ['latin'], variable: '--font-mono' });
+const fraunces = Fraunces({ subsets: ['latin'], variable: '--font-display' });
 export const metadata: Metadata = {
-  title: {
-    default: SITE_CONFIG.name,
-    template: `%s | ${SITE_CONFIG.name}`,
-  },
-  description: SITE_CONFIG.description,
-  keywords: [...SITE_CONFIG.keywords],
-  authors: [{ name: SITE_CONFIG.creator }],
-  creator: SITE_CONFIG.creator,
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: SITE_CONFIG.url,
-    title: SITE_CONFIG.name,
-    description: SITE_CONFIG.description,
-    siteName: SITE_CONFIG.name,
-    images: [
-      {
-        url: SITE_CONFIG.ogImage,
-        width: 1200,
-        height: 630,
-        alt: SITE_CONFIG.name,
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: SITE_CONFIG.name,
-    description: SITE_CONFIG.description,
-    images: [SITE_CONFIG.ogImage],
-    creator: `@${SITE_CONFIG.creator}`,
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+  metadataBase: new URL('https://jakeworsham.syncgr.com'), title: { default: 'Jake Worsham — Working software', template: '%s · Jake Worsham' },
+  description: 'Explore working demonstrations of Jake Worsham’s software: a sales workspace, voice assistant, document automation, RFP builder, and content studio.',
+  icons: { icon: '/favicon.svg' },
+  openGraph: { title: 'Jake Worsham — Working software', description: 'Open a project. Try the workflow. See how it works.', type: 'website' },
 };
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Navigation />
-        {children}
-      </body>
-    </html>
-  );
-}
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) { return <html lang="en"><body className={`${geist.variable} ${mono.variable} ${fraunces.variable}`}>{children}</body></html>; }

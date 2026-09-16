@@ -1,0 +1,40 @@
+{
+  "at": "2026-09-16T21:04:14.452Z",
+  "health": 200,
+  "results": [
+    {
+      "workspace": "prospects",
+      "status": 200,
+      "revision": 0
+    },
+    {
+      "workspace": "helga",
+      "status": 200,
+      "revision": 0
+    },
+    {
+      "workspace": "documents",
+      "status": 200,
+      "revision": 0
+    },
+    {
+      "workspace": "rfp",
+      "status": 200,
+      "revision": 0
+    },
+    {
+      "workspace": "cms",
+      "status": 200,
+      "revision": 0
+    },
+    {
+      "workspace": "receptionist",
+      "status": 200,
+      "revision": 0
+    }
+  ],
+  "ai": {
+    "status": 200,
+    "answer": "You have three events today:\n\n- 09:00 Morning planning\n- 11:30 Design review\n- 14:00 Client check-in"
+  }
+}
