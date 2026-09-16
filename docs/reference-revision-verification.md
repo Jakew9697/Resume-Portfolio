@@ -2,6 +2,8 @@
 
 Live site: https://jakeworsham.syncgr.com
 
+The later [carousel revision](carousel-revision-verification.md) replaces the homepage's shared horizontal track and project grid. The demo-app verification below remains the record for the reference-fidelity release.
+
 ## References and implementation
 
 - Inspected https://khanhnguyen.design/ in a headed browser at 1440×1000 and 390×844. The new portfolio uses warm charcoal/ivory, oversized editorial type, a vertical rail, horizontal desktop chapters, a full-screen menu, and stacked mobile sections. Text and app screenshots belong to this portfolio; no reference photography or proprietary fonts were copied.
