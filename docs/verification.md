@@ -1,5 +1,7 @@
 # Production verification — September 16, 2026
 
+This file records the first implementation. The later map-first Prospects, original-layout Helga, and reference-led homepage supersede its design descriptions. Current verification is in [reference-revision-verification.md](reference-revision-verification.md); the combined live API suite now contains 18 passing checks.
+
 Target: https://jakeworsham.syncgr.com. API: dedicated `jake-portfolio-prod` Lambda URL. All records and test audio were synthetic. The original projects and company customer data were untouched.
 
 ## Completed checks

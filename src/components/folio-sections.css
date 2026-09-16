@@ -1,0 +1,449 @@
+.folio-contact {
+  background: var(--ink);
+  color: #f3eee8;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.folio-contact-top {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+.folio-contact-top > span {
+  font-size: 10px;
+}
+.folio-contact-top > p {
+  font-size: 19px;
+  line-height: 1.4;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+.folio-next {
+  font-family: var(--font-editorial), Georgia, serif;
+  font-size: clamp(140px, 16vw, 260px);
+  font-weight: 300;
+  letter-spacing: -0.06em;
+  line-height: 0.75;
+  position: relative;
+  display: block;
+  margin: 0 0 25px -8px;
+}
+.folio-next > svg {
+  position: absolute;
+  right: 30px;
+  bottom: 20px;
+  width: 14vw;
+  height: 14vw;
+}
+.folio-contact-bottom {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 25px;
+}
+.folio-contact-bottom > a {
+  font-size: 23px;
+  letter-spacing: -0.03em;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  min-height: 44px;
+}
+.folio-contact-bottom nav {
+  display: flex;
+  gap: 20px;
+  font-size: 13px;
+}
+.folio-contact-bottom nav > a {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+.folio-contact-bottom > span {
+  font-size: 10px;
+  line-height: 1.5;
+  color: #c2bcb3;
+  text-align: right;
+}
+.folio-scroll-hint {
+  position: fixed;
+  bottom: 8px;
+  left: 80px;
+  z-index: 3;
+  font-size: 8px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #8a8276;
+  pointer-events: none;
+}
+.folio-mobile-header {
+  display: none;
+}
+.folio-menu {
+  width: 100%;
+  height: 100dvh;
+  max-width: 100%;
+  max-height: 100dvh;
+  margin: 0;
+  padding: 35px 7vw 40px 9vw;
+  border: 0;
+  background: var(--ink);
+  color: #f3eee8;
+}
+.folio-menu > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+}
+.folio-menu > nav {
+  margin: 5vh 0;
+  display: flex;
+  flex-direction: column;
+}
+.folio-menu nav > a {
+  display: flex;
+  align-items: baseline;
+  gap: 30px;
+  font-family: var(--font-editorial), Georgia, serif;
+  font-weight: 300;
+  font-size: clamp(60px, 8vw, 140px);
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+}
+.folio-menu nav small {
+  font-family: var(--font-geist), sans-serif;
+  font-size: 13px;
+  letter-spacing: 0;
+}
+.folio-menu nav svg {
+  margin-left: auto;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.folio-menu nav > a:hover svg {
+  opacity: 1;
+}
+.folio-menu > footer {
+  display: flex;
+  gap: 35px;
+  font-size: 14px;
+}
+.folio-menu footer > a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+}
+@media (min-width: 901px) and (max-height: 760px) {
+  .folio-about h2 {
+    font-size: 27px;
+  }
+  .folio-monogram {
+    aspect-ratio: 1;
+  }
+  .folio-monogram > span {
+    font-size: 100px;
+  }
+  .folio-monogram > small {
+    display: none;
+  }
+  .folio-projects {
+    gap: 20px;
+  }
+  .folio-project-grid {
+    gap: 20px 35px;
+  }
+  .folio-project-image {
+    padding: 15px;
+  }
+  .folio-hero h1 {
+    font-size: 13vw;
+  }
+  .folio-practice h2 {
+    font-size: 5.4vw;
+  }
+  .folio-services {
+    gap: 15px;
+  }
+  .folio-services p {
+    font-size: 12px;
+  }
+}
+@media (max-width: 900px) {
+  .folio {
+    height: auto !important;
+  }
+  .folio-rail {
+    display: none;
+  }
+  .folio-mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 65px;
+    background: var(--ink);
+    color: #f3eee8;
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    box-shadow: 0 1px 0 #f3eee833;
+  }
+  .folio-mobile-header > a {
+    font-family: var(--font-editorial), Georgia, serif;
+    font-size: 38px;
+    letter-spacing: -0.1em;
+  }
+  .folio-mobile-header sup {
+    font-family: var(--font-geist), sans-serif;
+    font-size: 7px;
+    letter-spacing: 0;
+    vertical-align: top;
+    margin: 10px 0 0 6px;
+    display: inline-block;
+  }
+  .folio-stage {
+    position: static;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+  }
+  .folio-track {
+    display: block;
+    width: 100%;
+    height: auto;
+    transform: none !important;
+    will-change: auto;
+  }
+  .folio-panel {
+    width: 100%;
+    height: auto;
+    min-height: 100svh;
+    padding: 35px 24px;
+    overflow: hidden;
+  }
+  .folio-hero {
+    min-height: calc(100svh - 65px);
+    padding: 20px 20px 45px;
+  }
+  .folio-hero h1 {
+    font-size: 19vw;
+    line-height: 0.83;
+    letter-spacing: -0.07em;
+    margin: auto 0 0 -3px;
+    order: 2;
+    padding-top: 180px;
+  }
+  .folio-hero h1 span + span {
+    margin-top: 8px;
+  }
+  .folio-introduction {
+    position: static;
+    width: 100%;
+    font-size: 20px;
+    line-height: 1.3;
+    letter-spacing: -0.05em;
+    margin: 0;
+    max-width: 650px;
+  }
+  .folio-hero-bottom {
+    order: 3;
+    margin-top: 45px;
+    grid-template-columns: 1fr 1fr;
+    font-size: 11px;
+    gap: 20px;
+    display: none;
+  }
+  .folio-hero-bottom > a {
+    font-size: 22px;
+  }
+  .folio-about {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    min-height: 900px;
+  }
+  .folio-chapter {
+    font-size: 23px;
+  }
+  .folio-about-content {
+    flex: 1;
+  }
+  .folio-about h2 {
+    font-size: 28px;
+    line-height: 1.4;
+    margin-top: 18px;
+  }
+  .folio-about-bottom {
+    margin-top: 70px;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .folio-monogram > span {
+    font-size: 100px;
+  }
+  .folio-monogram > small {
+    font-size: 6px;
+  }
+  .folio-about-bottom > p {
+    font-size: 9px;
+  }
+  .folio-about-note {
+    position: static;
+    font-size: 12px;
+    margin-top: 10px;
+  }
+  .folio-text-link {
+    font-size: 19px;
+    margin-top: 30px;
+  }
+  .folio-work-title {
+    min-height: 650px;
+    gap: 70px;
+    padding: 45px 24px;
+  }
+  .folio-work-title h2 {
+    font-size: 42vw;
+    line-height: 0.8;
+  }
+  .folio-work-title p {
+    font-size: 13px;
+  }
+  .folio-projects {
+    min-height: 0;
+    gap: 40px;
+    padding: 45px 20px;
+  }
+  .folio-project-heading {
+    display: block;
+  }
+  .folio-project-heading > p {
+    width: 100%;
+    margin-top: 25px;
+  }
+  .folio-project-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    gap: 35px;
+  }
+  .folio-project-image {
+    aspect-ratio: 1.2;
+    padding: 20px;
+    min-height: 240px;
+  }
+  .folio-project-image > img {
+    height: auto;
+    max-height: 100%;
+  }
+  .folio-project-image > span {
+    opacity: 1;
+    transform: none;
+    padding: 10px 12px;
+    font-size: 10px;
+  }
+  .folio-project-caption h3 {
+    font-size: 30px;
+  }
+  .folio-project-caption p {
+    font-size: 9px;
+  }
+  .folio-practice {
+    display: block;
+    min-height: 900px;
+    padding: 45px 24px;
+  }
+  .folio-practice > div {
+    margin-top: 60px;
+  }
+  .folio-practice h2 {
+    font-size: 55px;
+  }
+  .folio-services {
+    grid-template-columns: 1fr;
+    margin-top: 45px;
+    gap: 20px;
+  }
+  .folio-services article {
+    grid-template-columns: 22px 1fr;
+  }
+  .folio-services h3 {
+    font-size: 23px;
+  }
+  .folio-services p {
+    font-size: 13px;
+    margin: 8px 0 0;
+  }
+  .folio-contact {
+    min-height: calc(100svh - 65px);
+    padding: 35px 24px;
+    gap: 70px;
+  }
+  .folio-contact-top {
+    display: block;
+  }
+  .folio-contact-top p {
+    margin-top: 30px;
+    font-size: 19px;
+  }
+  .folio-next {
+    font-size: 27vw;
+    margin: 0;
+    line-height: 0.8;
+  }
+  .folio-next > svg {
+    width: 60px;
+    height: 60px;
+    right: 0;
+    bottom: 95%;
+  }
+  .folio-contact-bottom {
+    align-items: start;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .folio-contact-bottom > a {
+    font-size: 21px;
+  }
+  .folio-contact-bottom > span {
+    text-align: left;
+  }
+  .folio-contact-bottom nav {
+    font-size: 12px;
+  }
+  .folio-scroll-hint {
+    display: none;
+  }
+  .folio-menu {
+    padding: 20px 24px;
+  }
+  .folio-menu nav > a {
+    font-size: 70px;
+    gap: 20px;
+  }
+  .folio-menu nav svg {
+    width: 25px;
+    height: 25px;
+    opacity: 1;
+  }
+  .folio-menu > nav {
+    margin: 12vh 0 7vh;
+  }
+  .folio-menu footer {
+    gap: 24px;
+    font-size: 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .folio * {
+    transition: none !important;
+    animation: none !important;
+  }
+  .folio-track {
+    will-change: auto;
+  }
+}

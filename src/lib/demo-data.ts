@@ -6,6 +6,10 @@ export const prospectSchema = z.object({
   id: text(64), company: text(100).min(1), contact: text(100).min(1), email: z.union([z.literal(''), z.email()]),
   phone: text(30), city: text(100), territory: text(50), owner: text(80), stage: z.enum(stages),
   value: z.number().min(0).max(10000000), nextAction: text(300), notes: text(8000), updated: text(40),
+  address: text(300).optional(), latitude: z.number().min(-90).max(90).optional(), longitude: z.number().min(-180).max(180).optional(),
+  state: text(50).optional(), zip: text(20).optional(),
+  priority: z.boolean().optional(), warehouse: text(80).optional(), distributor: text(100).optional(),
+  probability: z.number().min(0).max(100).optional(), closeDate: text(40).optional(), placeId: text(300).optional(), future: z.boolean().optional(),
 });
 export type Prospect = z.infer<typeof prospectSchema>;
 export const taskSchema = z.object({ id: text(64), title: text(300).min(1), done: z.boolean() });

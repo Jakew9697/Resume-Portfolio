@@ -1,5 +1,5 @@
 {
-  "at": "2026-09-16T21:08:08.940Z",
+  "at": "2026-09-16T22:40:17.489Z",
   "api": "https://lp23bzpa2i2ikouf3xxcfi3grq0gbcfk.lambda-url.us-east-1.on.aws",
   "checks": [
     {
@@ -54,7 +54,7 @@
     {
       "name": "Document generated and persisted",
       "passed": true,
-      "characters": 1892
+      "characters": 2096
     },
     {
       "name": "RFP cites source and marks missing experience",
@@ -65,9 +65,22 @@
       "passed": true
     },
     {
-      "name": "Failure",
-      "passed": false,
-      "error": "The \"message\" argument must be one of type string or function. Received undefined"
+      "name": "Polly returns playable audio",
+      "passed": true,
+      "bytes": 15740
+    },
+    {
+      "name": "Transcribe converts real audio to text",
+      "passed": true,
+      "transcript": "Add a task to review the voice demonstration."
+    },
+    {
+      "name": "Audio job ownership enforced",
+      "passed": true
+    },
+    {
+      "name": "Voice transcript executes and saves action",
+      "passed": true
     }
   ]
 }

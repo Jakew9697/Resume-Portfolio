@@ -1,0 +1,385 @@
+.helga-app {
+  color-scheme: dark;
+  --canvas: #0a0a0b;
+  --surface: #121215;
+  --raised: #18181c;
+  --fg: #ece9df;
+  --muted: #ece9df8c;
+  --faint: #ece9df52;
+  --accent: #e8b86b;
+  --line: #ffffff0f;
+  background: var(--canvas);
+  color: var(--fg);
+  font-family: var(--font-inter), sans-serif;
+  font-size: 12px;
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  height: 100dvh;
+  min-height: 720px;
+  transition: grid-template-columns 0.22s;
+  position: relative;
+}
+.helga-app:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 55% 55%, #e8b86b08, transparent 55%);
+  pointer-events: none;
+}
+.helga-app button {
+  background: var(--raised);
+  color: var(--muted);
+  border-radius: 5px;
+  min-height: 40px;
+  padding: 8px 12px;
+  box-shadow: 0 0 0 1px #ffffff12;
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+}
+.helga-app button:hover {
+  color: var(--fg);
+  background: #242328;
+}
+.helga-app button.primary {
+  background: #e8b86b;
+  color: #14100a;
+}
+.h-sidebar {
+  background: #08080a;
+  box-shadow: 1px 0 0 var(--line);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1;
+}
+.h-sidebar > header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 14px 18px;
+  white-space: nowrap;
+}
+.h-sidebar > header button {
+  width: 40px;
+  padding: 10px;
+  background: none;
+  flex-shrink: 0;
+}
+.h-brand {
+  font-family: var(--font-display), serif;
+  font-style: italic;
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+.h-brand span {
+  color: var(--accent);
+}
+.h-sidebar nav {
+  display: grid;
+}
+.h-sidebar nav button {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  align-items: center;
+  border-left: 2px solid transparent;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 10px 0;
+  background: transparent;
+  color: var(--faint);
+  font-family: var(--font-inter), sans-serif;
+  text-align: left;
+  font-size: 13px;
+  letter-spacing: 0;
+  min-height: 40px;
+  white-space: nowrap;
+}
+.h-sidebar nav svg {
+  justify-self: center;
+}
+.h-sidebar nav button.selected {
+  background: #e8b86b0a;
+  border-color: var(--accent);
+  color: var(--fg);
+}
+.h-sidebar nav button:hover {
+  color: var(--fg);
+  background: #ffffff04;
+}
+.h-back {
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: 62px 1fr;
+  min-height: 55px;
+  align-items: center;
+  color: var(--faint);
+  font-size: 10px;
+  white-space: nowrap;
+}
+.h-back svg {
+  justify-self: center;
+}
+.h-collapsed {
+  grid-template-columns: 62px minmax(0, 1fr);
+}
+.h-collapsed .h-brand,
+.h-collapsed .h-sidebar nav span,
+.h-collapsed .h-back span {
+  visibility: hidden;
+}
+.h-main {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 0;
+  min-width: 0;
+  z-index: 1;
+  overflow: auto;
+}
+.h-topbar {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  min-height: 28px;
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+}
+.helga-app .h-account {
+  margin-right: auto;
+  white-space: nowrap;
+  font-weight: 500;
+  min-height: 40px;
+}
+.h-account span {
+  color: var(--accent);
+  margin-left: 8px;
+}
+.h-meta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.h-meta strong {
+  color: var(--fg);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+.h-meta i {
+  width: 3px;
+  height: 3px;
+  background: var(--faint);
+  border-radius: 100%;
+}
+.h-model {
+  background: var(--raised);
+  box-shadow: 0 0 0 1px #ffffff12;
+  padding: 8px 10px;
+  border-radius: 5px;
+  font-size: 10px;
+  white-space: nowrap;
+}
+.h-connected {
+  color: #8fb98c;
+  white-space: nowrap;
+}
+.h-connected::before {
+  content: "●";
+  margin-right: 6px;
+  font-size: 8px;
+}
+.h-connected.pending {
+  color: var(--faint);
+}
+.h-feedback {
+  position: fixed;
+  bottom: 14px;
+  left: 220px;
+  max-width: 480px;
+  z-index: 8;
+  pointer-events: none;
+}
+.h-feedback .feedback {
+  background: #1c211b;
+  box-shadow: 0 6px 25px #0006;
+  margin: 0;
+}
+.h-feedback .error {
+  background: #291b19;
+}
+.h-feedback:empty {
+  display: none;
+}
+.h-dashboard {
+  flex: 1;
+  display: grid;
+  grid-template-rows: minmax(340px, 1fr) 96px 200px;
+  gap: 16px;
+  min-height: 650px;
+}
+.h-dashboard-top {
+  display: grid;
+  grid-template-columns: minmax(0, 340px) minmax(230px, 1fr) minmax(0, 340px);
+  gap: 16px;
+  min-height: 0;
+}
+.h-widget {
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 14px 18px;
+  box-shadow:
+    0 0 0 1px #ffffff0f,
+    0 3px 10px #0001;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 0;
+  min-width: 0;
+  overflow: hidden;
+}
+.h-widget > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 22px;
+}
+.h-widget h2 {
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--faint);
+  font-weight: 500;
+}
+.h-widget > header > button {
+  font-size: 9px;
+  min-height: 40px;
+  padding: 5px 9px;
+  background: transparent;
+  text-transform: uppercase;
+  box-shadow: none;
+  letter-spacing: 0.1em;
+  margin: -9px 0;
+}
+.h-widget-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+}
+.h-events article {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 15px 0;
+  border-bottom: 1px solid #ffffff08;
+}
+.h-events article:last-child {
+  border: 0;
+}
+.h-event-day {
+  width: 32px;
+  flex-shrink: 0;
+  text-align: center;
+}
+.h-event-day strong {
+  display: block;
+  font-family: var(--font-display), serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--accent);
+  line-height: 1;
+}
+.h-event-day small {
+  font-family: var(--font-mono), monospace;
+  color: var(--faint);
+  font-size: 9px;
+  text-transform: uppercase;
+}
+.h-events article > div:nth-child(2) {
+  flex: 1;
+  min-width: 0;
+}
+.h-events article > div:nth-child(2) > strong {
+  display: block;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.h-events article > div:nth-child(2) > span {
+  display: block;
+  font-size: 9px;
+  color: var(--faint);
+  margin-top: 5px;
+}
+.h-empty {
+  font-size: 12px;
+  font-style: italic;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+.h-inbox > .h-empty {
+  padding: 10px 0;
+  font-size: 12px;
+}
+.h-inbox .h-empty > span {
+  display: block;
+  font-size: 11px;
+  color: var(--faint);
+  font-style: normal;
+  line-height: 1.7;
+}
+.h-inbox .h-empty > button {
+  margin-top: 22px;
+  white-space: normal;
+  text-align: left;
+  line-height: 1.6;
+  color: var(--accent);
+}
+.h-inbox > button {
+  display: flex;
+  width: 100%;
+  text-align: left;
+  gap: 10px;
+  padding: 14px 0 !important;
+  border-radius: 0;
+  background: none !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-inter), sans-serif !important;
+  letter-spacing: 0 !important;
+}
+.h-avatar {
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  display: grid;
+  place-items: center;
+  background: #e8b86b15;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.h-inbox b {
+  font-weight: 500;
+  font-size: 12px;
+}
+.h-inbox small {
+  display: block;
+  font-size: 10px;
+  line-height: 1.6;
+  margin-top: 6px;
+}
+.h-inbox em {
+  display: block;
+  font-size: 9px;
+  color: var(--accent);
+  margin-top: 7px;
+}

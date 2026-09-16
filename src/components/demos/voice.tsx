@@ -22,7 +22,7 @@ export function ListenButton({ text, voice, onError }: { text: string; voice?: s
   const speech = useSpeech(); const [loading, setLoading] = useState(false);
   return <button className="secondary small-button" disabled={loading} onClick={() => { if (speech.speaking) speech.stop(); else { setLoading(true); void speech.speak(text,voice).catch(e => onError(errorText(e))).finally(() => setLoading(false)); } }}>{speech.speaking ? <Square size={14}/> : <Volume2 size={15}/>} {loading ? 'Preparing audio…' : speech.speaking ? 'Stop audio' : 'Listen'}</button>;
 }
-export function RecordButton({ onText, onError, disabled = false, onState }: { onText: (text: string) => void; onError: (message: string) => void; disabled?: boolean; onState?: (state: string) => void }) {
+export function RecordButton({ onText, onError, disabled = false, onState, splitControls = false }: { onText: (text: string) => void; onError: (message: string) => void; disabled?: boolean; onState?: (state: string) => void; splitControls?: boolean }) {
   const recorder = useRef<MediaRecorder | null>(null); const stream = useRef<MediaStream | null>(null); const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const alive = useRef(true); const [state, setState] = useState('idle');
   const update = (s: string) => { if (alive.current) { setState(s); onState?.(s); } };
@@ -56,5 +56,5 @@ export function RecordButton({ onText, onError, disabled = false, onState }: { o
       rec.start(); update('recording'); timer.current = setTimeout(() => rec.stop(),30000);
     } catch (e) { stream.current?.getTracks().forEach(t => t.stop()); update('idle'); onError(errorText(e)); }
   };
-  return <button className={`secondary record-button ${state === 'recording' ? 'recording' : ''}`} disabled={disabled || ['opening','transcribing'].includes(state)} onClick={() => state === 'recording' ? recorder.current?.stop() : void start()} aria-label={state === 'recording' ? 'Stop recording' : 'Record a voice message'}>{state === 'recording' ? <Square size={17}/> : <Mic size={18}/>}<span>{state === 'recording' ? 'Stop recording' : state === 'transcribing' ? 'Transcribing…' : state === 'opening' ? 'Opening mic…' : 'Use microphone'}</span></button>;
+  return <>{splitControls && <button className="h-stop" aria-label="Stop recording" disabled={state !== 'recording'} onClick={() => recorder.current?.stop()}>Stop</button>}<button className={`secondary record-button ${state === 'recording' ? 'recording' : ''}`} disabled={disabled || ['opening','transcribing'].includes(state)} onClick={() => state === 'recording' ? recorder.current?.stop() : void start()} aria-label={state === 'recording' ? 'Stop recording and transcribe' : 'Record a voice message'}>{!splitControls && (state === 'recording' ? <Square size={17}/> : <Mic size={18}/>)}<span>{state === 'recording' ? 'Recording…' : state === 'transcribing' ? 'Transcribing…' : state === 'opening' ? 'Opening mic…' : splitControls ? 'Voice mode' : 'Use microphone'}</span></button></>;
 }

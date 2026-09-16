@@ -9,6 +9,7 @@ import { hashIp, issue, signingKey, verify } from './auth';
 import { quota, read, write } from './store';
 import { assistant, generate, receptionist } from './ai';
 import { speak, startTranscription, transcription } from './voice';
+import { mapsConfiguration } from './maps';
 
 type Env = { Variables: { session: string; ipHash: string }; Bindings: { event?: { requestContext?: { http?: { sourceIp?: string } } } } };
 export const app = new Hono<Env>();
@@ -31,6 +32,10 @@ app.post('/session', async c => {
   return c.json(issue(await signingKey()));
 });
 app.use('/state/*', async (c, next) => { await quota(`state-${c.get('session')}`, 300); await next(); });
+app.get('/maps/config', async c => {
+  await quota(`maps-${c.get('session')}`, 30);
+  return c.json(await mapsConfiguration());
+});
 app.get('/state/:workspace', async c => {
   const workspace = c.req.param('workspace');
   if (!Object.hasOwn(schemas, workspace)) throw new HTTPException(404, { message: 'Unknown workspace.' });
