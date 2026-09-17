@@ -4,13 +4,14 @@ export type PortfolioProject = {
   slug: string;
   name: string;
   category: string;
-  year: string;
+  year?: string;
   scope: string[];
   overview: string;
   features: string[];
   technology: string;
   device: DeviceKind;
   liveUrl?: string;
+  archived?: boolean;
   images?: ProjectImage[];
 };
 
@@ -67,10 +68,74 @@ export const projects: PortfolioProject[] = [
     technology: "Next.js / React Native / Expo / TV interfaces / AWS",
     liveUrl: "https://move-v.app/",
     images: [
-      { src: "/projects/move-v-desktop.png", alt: "Move V populated desktop catalog", width: 1440, height: 1000, caption: "Desktop — the populated development catalog", device: "desktop" },
-      { src: "/projects/move-v-tv.png", alt: "Move V television interface with its film catalog", width: 1920, height: 1080, caption: "TV — webOS / Tizen interface, browser preview", device: "tv" },
-      { src: "/projects/move-v-tablet.png", alt: "Move V catalog on a tablet-sized screen", width: 1024, height: 768, caption: "Tablet — responsive web interface", device: "tablet" },
-      { src: "/projects/move-v-mobile.png", alt: "Move V catalog on a phone-sized screen", width: 390, height: 844, caption: "Phone — responsive web interface", device: "phone" },
+      {
+        src: "/projects/move-v-desktop.png",
+        alt: "Move V populated desktop catalog",
+        width: 1440,
+        height: 1000,
+        caption: "Desktop — the populated development catalog",
+        device: "desktop",
+      },
+      {
+        src: "/projects/move-v-tv.png",
+        alt: "Move V television interface with its film catalog",
+        width: 1920,
+        height: 1080,
+        caption: "TV — webOS / Tizen interface, browser preview",
+        device: "tv",
+      },
+      {
+        src: "/projects/move-v-tablet.png",
+        alt: "Move V catalog on a tablet-sized screen",
+        width: 1024,
+        height: 768,
+        caption: "Tablet — responsive web interface",
+        device: "tablet",
+      },
+      {
+        src: "/projects/move-v-mobile.png",
+        alt: "Move V catalog on a phone-sized screen",
+        width: 390,
+        height: 844,
+        caption: "Phone — responsive web interface",
+        device: "phone",
+      },
+    ],
+  },
+  {
+    slug: "magnify",
+    device: "laptop",
+    name: "Magnify",
+    category: "Inspection management",
+    year: "2026",
+    scope: ["Product design", "Inspection workflows", "AI experience"],
+    overview:
+      "A home-inspection platform that brings inspections, report templates, scheduling, and an AI assistant into one workspace. Designed to help inspectors move from field observations to a finished report.",
+    features: [
+      "Organize inspections and schedules",
+      "Build reusable inspection templates",
+      "Work with an assistant in the field",
+      "Bring findings and photos into a report",
+    ],
+    technology: "Next.js / NestJS / PostgreSQL / AI / AWS",
+    liveUrl: "https://magnify.syncgr.com/",
+    images: [
+      {
+        src: "/projects/magnify-desktop.jpg",
+        alt: "Magnify residential inspection template",
+        width: 1440,
+        height: 1000,
+        caption: "Desktop — residential inspection template workspace",
+        device: "laptop",
+      },
+      {
+        src: "/projects/magnify-mobile.jpg",
+        alt: "Magnify template workspace on a phone",
+        width: 390,
+        height: 844,
+        caption: "Phone — responsive inspection workspace",
+        device: "phone",
+      },
     ],
   },
   {

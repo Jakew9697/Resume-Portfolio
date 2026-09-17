@@ -1,0 +1,81 @@
+{
+  "checks": [
+    {
+      "detail": {
+        "bottom": 65,
+        "height": 65,
+        "left": 0,
+        "right": 390,
+        "top": 0,
+        "width": 390,
+        "x": 0,
+        "y": 0
+      },
+      "name": "Reference navigation dimensions",
+      "passed": true
+    },
+    {
+      "detail": {
+        "document": 390,
+        "width": 390
+      },
+      "name": "No document horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "Reference fonts loaded",
+      "passed": true
+    },
+    {
+      "name": "Removed slide counters and top desktop navigation",
+      "passed": true
+    },
+    {
+      "name": "Menu opens and locks background",
+      "passed": true
+    },
+    {
+      "name": "Separate page destinations",
+      "passed": true
+    },
+    {
+      "name": "Menu labels fit without clipping",
+      "passed": true
+    },
+    {
+      "name": "Menu has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "Correct navigation destination highlighted",
+      "passed": true
+    },
+    {
+      "name": "Menu closes and releases background",
+      "passed": true
+    },
+    {
+      "name": "Mobile chapters stack vertically",
+      "passed": true
+    },
+    {
+      "name": "Mobile About text precedes portrait",
+      "passed": true
+    },
+    {
+      "name": "Device scenes contain their positioning layers",
+      "passed": true
+    },
+    {
+      "name": "All loaded images valid",
+      "passed": true
+    }
+  ],
+  "passed": 14,
+  "total": 14,
+  "url": "https://jakeworsham.syncgr.com/about/",
+  "viewport": [
+    390,
+    844
+  ]
+}

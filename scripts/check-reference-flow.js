@@ -15,6 +15,9 @@
   };
   await document.fonts.ready;
   const mobile = innerWidth < 768;
+  const collection = location.pathname.startsWith("/websites/")
+    ? "websites"
+    : "works";
   const rail = document.querySelector(".folio-rail").getBoundingClientRect();
   record(
     "Reference navigation dimensions",
@@ -48,7 +51,28 @@
     "Separate page destinations",
     [...document.querySelectorAll(".folio-menu nav>a")]
       .map((a) => a.getAttribute("href"))
-      .join("|") === "/|/about/|/works/|mailto:jake@syncgr.com",
+      .join("|") === "/|/about/|/works/|/websites/|mailto:jake@syncgr.com",
+  );
+  await delay(600);
+  const menu = document.querySelector(".folio-menu");
+  record(
+    "Menu labels fit without clipping",
+    [...menu.querySelectorAll("nav>a>span:last-child")].every(
+      (label) => label.scrollWidth <= label.clientWidth + 1,
+    ),
+  );
+  record(
+    "Menu has no horizontal overflow",
+    menu.scrollWidth <= menu.clientWidth,
+  );
+  record(
+    "Correct navigation destination highlighted",
+    menu.querySelector("[aria-current=page]")?.getAttribute("href") ===
+      (location.pathname.startsWith("/websites/")
+        ? "/websites/"
+        : location.pathname.startsWith("/works/")
+          ? "/works/"
+          : location.pathname),
   );
   document.querySelector(".folio-menu-close").click();
   await wait(() => !document.querySelector(".folio-menu").open);
@@ -116,8 +140,8 @@
   if (gallery) {
     const items = [...document.querySelectorAll(".folio-work-item")];
     record(
-      "Seven unframed projects",
-      items.length === 7 &&
+      `${collection}: complete unframed gallery`,
+      items.length === (collection === "websites" ? 20 : 8) &&
         items.every(
           (item) =>
             getComputedStyle(item).boxShadow === "none" &&
@@ -125,30 +149,43 @@
         ),
     );
     const previews = [...document.querySelectorAll(".folio-work-image img")];
-    await Promise.all(previews.map((img) => {
-      img.loading = "eager";
-      return img.decode().catch(() => {});
-    }));
+    await Promise.all(
+      previews.map((img) => {
+        img.loading = "eager";
+        return img.decode().catch(() => {});
+      }),
+    );
     record(
       "Every preview preserves the complete screenshot",
       previews.every((img) => {
         const style = getComputedStyle(img);
-        return img.naturalWidth > 0 && style.objectFit === "contain" &&
-          !!img.closest(".device-screen");
+        return (
+          img.naturalWidth > 0 &&
+          style.objectFit === "contain" &&
+          !!img.closest(".device-screen")
+        );
       }),
     );
     record(
       "Every project is presented inside a device",
-      items.every((item) => !!item.querySelector(".folio-device .device-screen img")),
+      items.every(
+        (item) => !!item.querySelector(".folio-device .device-screen img"),
+      ),
     );
     record(
       "Device bodies stay inside their scenes",
-      [...document.querySelectorAll(".folio-works-track .folio-device")].every((device) => {
-        const frame = device.getBoundingClientRect();
-        const scene = device.closest(".device-scene").getBoundingClientRect();
-        return frame.left >= scene.left - 1 && frame.right <= scene.right + 1 &&
-          frame.top >= scene.top - 1 && frame.bottom <= scene.bottom + 1;
-      }),
+      [...document.querySelectorAll(".folio-works-track .folio-device")].every(
+        (device) => {
+          const frame = device.getBoundingClientRect();
+          const scene = device.closest(".device-scene").getBoundingClientRect();
+          return (
+            frame.left >= scene.left - 1 &&
+            frame.right <= scene.right + 1 &&
+            frame.top >= scene.top - 1 &&
+            frame.bottom <= scene.bottom + 1
+          );
+        },
+      ),
     );
     if (!mobile) {
       gallery.scrollLeft = 0;
@@ -169,30 +206,47 @@
     );
     for (const slug of expectedSlugs) {
       document
-        .querySelector(`.folio-work-item>a[href="/works/${slug}/"]`)
+        .querySelector(`.folio-work-item>a[href="/${collection}/${slug}/"]`)
         .click();
       await wait(() => !!document.querySelector(".folio-project-detail"));
       const detail = document.querySelector(".folio-project-detail");
       record(
         `${slug}: opens full-screen detail`,
-        location.pathname === `/works/${slug}/` && !!detail,
+        location.pathname === `/${collection}/${slug}/` && !!detail,
       );
       record(
         `${slug}: native live-demo link`,
-        [...detail.querySelectorAll("a")].some(
-          (a) => a.getAttribute("href") === (slug === "move-v" ? "https://move-v.app/" : `/${slug}/`),
-        ),
+        collection === "websites" && slug === "blue-shore"
+          ? !!detail.querySelector("[data-archive]") &&
+              !detail.querySelector(
+                'a[href="https://blueshoresconstruction.com/"]',
+              )
+          : [...detail.querySelectorAll("a")].some((a) =>
+              collection === "websites"
+                ? a.getAttribute("href")?.startsWith("https://")
+                : a.getAttribute("href") ===
+                  ({
+                    "move-v": "https://move-v.app/",
+                    magnify: "https://magnify.syncgr.com/",
+                  }[slug] ?? `/${slug}/`),
+            ),
       );
       const images = [...detail.querySelectorAll(".folio-detail-gallery img")];
-      await Promise.all(images.map((img) => {
-        img.loading = "eager";
-        return img.decode().catch(() => {});
-      }));
+      await Promise.all(
+        images.map((img) => {
+          img.loading = "eager";
+          return img.decode().catch(() => {});
+        }),
+      );
       record(
         `${slug}: all full screenshots load without cropping`,
-        images.length > 0 && images.every((img) =>
-          img.naturalWidth > 0 && getComputedStyle(img).objectFit === "contain" &&
-          !!img.closest(".device-screen")),
+        images.length > 0 &&
+          images.every(
+            (img) =>
+              img.naturalWidth > 0 &&
+              getComputedStyle(img).objectFit === "contain" &&
+              !!img.closest(".device-screen"),
+          ),
       );
       const heading = detail.querySelector("h1");
       const range = document.createRange();
@@ -206,32 +260,37 @@
       await wait(() => !!document.querySelector(".folio-works-viewport"));
       record(
         `${slug}: back returns to gallery`,
-        location.pathname === "/works/",
+        location.pathname === `/${collection}/`,
       );
     }
     document.querySelector(".folio-work-item>a").click();
     await wait(() => !!document.querySelector(".folio-detail-next"));
     document.querySelector(".folio-detail-next>a").click();
-    await wait(() => location.pathname === "/works/helga/");
+    await wait(
+      () => location.pathname === `/${collection}/${expectedSlugs[1]}/`,
+    );
     record(
       "Next project navigation",
       document.querySelector(".folio-project-detail h1").textContent ===
-        "Helga",
+        (collection === "websites" ? "Move V Studio" : "Helga"),
     );
     history.back();
-    await wait(() => location.pathname === "/works/prospects/");
+    await wait(
+      () => location.pathname === `/${collection}/${expectedSlugs[0]}/`,
+    );
     record(
       "Browser Back updates project view",
       document.querySelector(".folio-project-detail h1").textContent ===
-        "Prospects",
+        (collection === "websites" ? "Scott Devon" : "Prospects"),
     );
     document.querySelector(".folio-detail-back").click();
     await wait(() => !!document.querySelector(".folio-works-viewport"));
   }
   record(
     "Device scenes contain their positioning layers",
-    [...document.querySelectorAll(".device-scene")].every((scene) =>
-      getComputedStyle(scene).position !== "static"),
+    [...document.querySelectorAll(".device-scene")].every(
+      (scene) => getComputedStyle(scene).position !== "static",
+    ),
   );
   record(
     "All loaded images valid",

@@ -1,0 +1,497 @@
+{
+  "checks": [
+    {
+      "detail": {
+        "bottom": 65,
+        "height": 65,
+        "left": 0,
+        "right": 390,
+        "top": 0,
+        "width": 390,
+        "x": 0,
+        "y": 0
+      },
+      "name": "Reference navigation dimensions",
+      "passed": true
+    },
+    {
+      "detail": {
+        "document": 390,
+        "width": 390
+      },
+      "name": "No document horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "Reference fonts loaded",
+      "passed": true
+    },
+    {
+      "name": "Removed slide counters and top desktop navigation",
+      "passed": true
+    },
+    {
+      "name": "Menu opens and locks background",
+      "passed": true
+    },
+    {
+      "name": "Separate page destinations",
+      "passed": true
+    },
+    {
+      "name": "Menu labels fit without clipping",
+      "passed": true
+    },
+    {
+      "name": "Menu has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "Correct navigation destination highlighted",
+      "passed": true
+    },
+    {
+      "name": "Menu closes and releases background",
+      "passed": true
+    },
+    {
+      "name": "websites: complete unframed gallery",
+      "passed": true
+    },
+    {
+      "name": "Every preview preserves the complete screenshot",
+      "passed": true
+    },
+    {
+      "name": "Every project is presented inside a device",
+      "passed": true
+    },
+    {
+      "name": "Device bodies stay inside their scenes",
+      "passed": true
+    },
+    {
+      "name": "scott-devon: opens full-screen detail",
+      "passed": true
+    },
+    {
+      "name": "scott-devon: native live-demo link",
+      "passed": true
+    },
+    {
+      "name": "scott-devon: all full screenshots load without cropping",
+      "passed": true
+    },
+    {
+      "name": "scott-devon: title fits",
+      "passed": true
+    },
+    {
+      "name": "scott-devon: back returns to gallery",
+      "passed": true
+    },
+    {
+      "name": "beneath-pictures: opens full-screen detail",
+      "passed": true
+    },
+    {
+      "name": "beneath-pictures: native live-demo link",
+      "passed": true
+    },
+    {
+      "name": "beneath-pictures: all full screenshots load without cropping",
+      "passed": true
+    },
+    {
+      "name": "beneath-pictures: title fits",
+      "passed": true
+    },
+    {
+      "name": "beneath-pictures: back returns to gallery",
+      "passed": true
+    },
+    {
+      "name": "beneath-the-varnish: opens full-screen detail",
+      "passed": true
+    },
+    {
+      "name": "beneath-the-varnish: native live-demo link",
+      "passed": true
+    },
+    {
+      "name": "beneath-the-varnish: all full screenshots load without cropping",
+      "passed": true
+    },
+    {
+      "name": "beneath-the-varnish: title fits",
+      "passed": true
+    },
+    {
+      "name": "beneath-the-varnish: back returns to gallery",
+      "passed": true
+    },
+    {
+      "name": "mitten-chips: opens full-screen detail",
+      "passed": true
+    },
+    {
+      "name": "mitten-chips: native live-demo link",
+      "passed": true
+    },
+    {
+      "name": "mitten-chips: all full screenshots load without cropping",
+      "passed": true
+    },
+    {
+      "name": "mitten-chips: title fits",
+      "passed": true
+    },
+    {
+      "name": "mitten-chips: back returns to gallery",
+      "passed": true
+    },
+    {
+      "name": "traverse-bay-pizza: opens full-screen detail",
+      "passed": true
+    },
+    {
+      "name": "traverse-bay-pizza: native live-demo link",
+      "passed": true
+    },
+    {
+      "name": "traverse-bay-pizza: all full screenshots load without cropping",
+      "passed": true
+    },
+    {
+      "name": "traverse-bay-pizza: title fits",
+      "passed": true
+    },
+    {
+      "name": "traverse-bay-pizza: back returns to gallery",
+      "passed": true
+    },
+    {
+      "name": "green-apple-pantry: opens full-screen detail",
+      "passed": true
+    },
+    {
+      "name": "green-apple-pantry: native live-demo link",
+      "passed": true
+    },
+    {
+      "name": "green-apple-pantry: all full screenshots load without cropping",
+      "passed": true
+    },
+    {
+      "name": "green-apple-pantry: title fits",
+      "passed": true
+    },
+    {
+      "name": "green-apple-pantry: back returns to gallery",
+      "passed": true
+    },
+    {
+      "name": "platinum-roofing: opens full-screen detail",
+      "passed": true
+    },
+    {
+      "name": "platinum-roofing: native live-demo link",
+      "passed": true
+    },
+    {
+      "name": "platinum-roofing: all full screenshots load without cropping",
+      "passed": true
+    },
+    {
+      "name": "platinum-roofing: title fits",
+      "passed": true
+    },
+    {
+      "name": "platinum-roofing: back returns to gallery",
+      "passed": true
+    },
+    {
+      "name": "mich-inspect: opens full-screen detail",
+      "passed": true
+    },
+    {
+      "name": "mich-inspect: native live-demo link",
+      "passed": true
+    },
+    {
+      "name": "mich-inspect: all full screenshots load without cropping",
+      "passed": true
+    },
+    {
+      "name": "mich-inspect: title fits",
+      "passed": true
+    },
+    {
+      "name": "mich-inspect: back returns to gallery",
+      "passed": true
+    },
+    {
+      "name": "blue-shore: opens full-screen detail",
+      "passed": true
+    },
+    {
+      "name": "blue-shore: native live-demo link",
+      "passed": true
+    },
+    {
+      "name": "blue-shore: all full screenshots load without cropping",
+      "passed": true
+    },
+    {
+      "name": "blue-shore: title fits",
+      "passed": true
+    },
+    {
+      "name": "blue-shore: back returns to gallery",
+      "passed": true
+    },
+    {
+      "name": "aerie: opens full-screen detail",
+      "passed": true
+    },
+    {
+      "name": "aerie: native live-demo link",
+      "passed": true
+    },
+    {
+      "name": "aerie: all full screenshots load without cropping",
+      "passed": true
+    },
+    {
+      "name": "aerie: title fits",
+      "passed": true
+    },
+    {
+      "name": "aerie: back returns to gallery",
+      "passed": true
+    },
+    {
+      "name": "enchanted-gardener: opens full-screen detail",
+      "passed": true
+    },
+    {
+      "name": "enchanted-gardener: native live-demo link",
+      "passed": true
+    },
+    {
+      "name": "enchanted-gardener: all full screenshots load without cropping",
+      "passed": true
+    },
+    {
+      "name": "enchanted-gardener: title fits",
+      "passed": true
+    },
+    {
+      "name": "enchanted-gardener: back returns to gallery",
+      "passed": true
+    },
+    {
+      "name": "it-better-be-sweet: opens full-screen detail",
+      "passed": true
+    },
+    {
+      "name": "it-better-be-sweet: native live-demo link",
+      "passed": true
+    },
+    {
+      "name": "it-better-be-sweet: all full screenshots load without cropping",
+      "passed": true
+    },
+    {
+      "name": "it-better-be-sweet: title fits",
+      "passed": true
+    },
+    {
+      "name": "it-better-be-sweet: back returns to gallery",
+      "passed": true
+    },
+    {
+      "name": "eclipse-drywall: opens full-screen detail",
+      "passed": true
+    },
+    {
+      "name": "eclipse-drywall: native live-demo link",
+      "passed": true
+    },
+    {
+      "name": "eclipse-drywall: all full screenshots load without cropping",
+      "passed": true
+    },
+    {
+      "name": "eclipse-drywall: title fits",
+      "passed": true
+    },
+    {
+      "name": "eclipse-drywall: back returns to gallery",
+      "passed": true
+    },
+    {
+      "name": "ebd-wall: opens full-screen detail",
+      "passed": true
+    },
+    {
+      "name": "ebd-wall: native live-demo link",
+      "passed": true
+    },
+    {
+      "name": "ebd-wall: all full screenshots load without cropping",
+      "passed": true
+    },
+    {
+      "name": "ebd-wall: title fits",
+      "passed": true
+    },
+    {
+      "name": "ebd-wall: back returns to gallery",
+      "passed": true
+    },
+    {
+      "name": "kling-design: opens full-screen detail",
+      "passed": true
+    },
+    {
+      "name": "kling-design: native live-demo link",
+      "passed": true
+    },
+    {
+      "name": "kling-design: all full screenshots load without cropping",
+      "passed": true
+    },
+    {
+      "name": "kling-design: title fits",
+      "passed": true
+    },
+    {
+      "name": "kling-design: back returns to gallery",
+      "passed": true
+    },
+    {
+      "name": "sync: opens full-screen detail",
+      "passed": true
+    },
+    {
+      "name": "sync: native live-demo link",
+      "passed": true
+    },
+    {
+      "name": "sync: all full screenshots load without cropping",
+      "passed": true
+    },
+    {
+      "name": "sync: title fits",
+      "passed": true
+    },
+    {
+      "name": "sync: back returns to gallery",
+      "passed": true
+    },
+    {
+      "name": "sapphire-hulls: opens full-screen detail",
+      "passed": true
+    },
+    {
+      "name": "sapphire-hulls: native live-demo link",
+      "passed": true
+    },
+    {
+      "name": "sapphire-hulls: all full screenshots load without cropping",
+      "passed": true
+    },
+    {
+      "name": "sapphire-hulls: title fits",
+      "passed": true
+    },
+    {
+      "name": "sapphire-hulls: back returns to gallery",
+      "passed": true
+    },
+    {
+      "name": "construction-simplified: opens full-screen detail",
+      "passed": true
+    },
+    {
+      "name": "construction-simplified: native live-demo link",
+      "passed": true
+    },
+    {
+      "name": "construction-simplified: all full screenshots load without cropping",
+      "passed": true
+    },
+    {
+      "name": "construction-simplified: title fits",
+      "passed": true
+    },
+    {
+      "name": "construction-simplified: back returns to gallery",
+      "passed": true
+    },
+    {
+      "name": "tims-gourmet-sliders: opens full-screen detail",
+      "passed": true
+    },
+    {
+      "name": "tims-gourmet-sliders: native live-demo link",
+      "passed": true
+    },
+    {
+      "name": "tims-gourmet-sliders: all full screenshots load without cropping",
+      "passed": true
+    },
+    {
+      "name": "tims-gourmet-sliders: title fits",
+      "passed": true
+    },
+    {
+      "name": "tims-gourmet-sliders: back returns to gallery",
+      "passed": true
+    },
+    {
+      "name": "neisha-neshae: opens full-screen detail",
+      "passed": true
+    },
+    {
+      "name": "neisha-neshae: native live-demo link",
+      "passed": true
+    },
+    {
+      "name": "neisha-neshae: all full screenshots load without cropping",
+      "passed": true
+    },
+    {
+      "name": "neisha-neshae: title fits",
+      "passed": true
+    },
+    {
+      "name": "neisha-neshae: back returns to gallery",
+      "passed": true
+    },
+    {
+      "name": "Next project navigation",
+      "passed": true
+    },
+    {
+      "name": "Browser Back updates project view",
+      "passed": true
+    },
+    {
+      "name": "Device scenes contain their positioning layers",
+      "passed": true
+    },
+    {
+      "name": "All loaded images valid",
+      "passed": true
+    }
+  ],
+  "passed": 118,
+  "total": 118,
+  "url": "http://127.0.0.1:3046/websites/",
+  "viewport": [
+    390,
+    844
+  ]
+}

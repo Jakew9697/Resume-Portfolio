@@ -11,6 +11,31 @@
   overflow: hidden;
   background: var(--studio);
 }
+.scene-magnify {
+  --studio: #d7e2df;
+  --floor: #a9c1b9;
+  --light: #faf7ed;
+}
+.scene-scott-devon, .scene-beneath-the-varnish, .scene-kling-design {
+  --studio: #ded8cc;
+  --floor: #bcb19e;
+  --light: #fff7e5;
+}
+.scene-beneath-pictures, .scene-sync, .scene-neisha-neshae {
+  --studio: #353b3f;
+  --floor: #192429;
+  --light: #9ca5b0;
+}
+.scene-mitten-chips, .scene-traverse-bay-pizza, .scene-it-better-be-sweet {
+  --studio: #e4cfbb;
+  --floor: #c5a98f;
+  --light: #fff9e4;
+}
+.scene-blue-shore, .scene-sapphire-hulls {
+  --studio: #d7e0e4;
+  --floor: #a0b7c3;
+  --light: #f2faff;
+}
 .device-studio {
   position: absolute;
   inset: 0;

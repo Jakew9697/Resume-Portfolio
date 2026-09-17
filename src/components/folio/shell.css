@@ -199,14 +199,14 @@ html:has(.folio-site)::-webkit-scrollbar {
 .folio-menu nav {
   display: flex;
   flex-direction: column;
-  gap: 36px;
+  gap: clamp(20px, 3dvh, 36px);
 }
 .folio-menu nav > a {
   display: flex;
   align-items: center;
   gap: 24px;
   font-family: "Folio Editorial", serif;
-  font-size: min(20dvh, 15vw);
+  font-size: min(14dvh, 11vw);
   line-height: 0.9;
   letter-spacing: -0.04em;
   text-transform: uppercase;
@@ -236,9 +236,7 @@ html:has(.folio-site)::-webkit-scrollbar {
   text-transform: none;
 }
 .folio-menu-social {
-  position: absolute;
-  right: calc(6.4 * var(--s));
-  bottom: calc(var(--vg) + 22px);
+  position: relative;
   display: flex;
   justify-content: flex-end;
   gap: 32px;
@@ -431,7 +429,7 @@ html:has(.folio-site)::-webkit-scrollbar {
     gap: 24px;
   }
   .folio-menu nav > a {
-    font-size: clamp(52px, 17.43vw, 85px);
+    font-size: clamp(42px, 14.6vw, 72px);
     line-height: 0.9;
     flex-wrap: wrap;
     gap: 0;
@@ -445,10 +443,7 @@ html:has(.folio-site)::-webkit-scrollbar {
     font-size: 13px;
   }
   .folio-menu-social {
-    position: absolute;
-    left: 20px;
-    right: 20px;
-    bottom: 10px;
+    position: relative;
     border-top: 1px solid #726d66;
     padding-top: 5px;
     font-size: 14px;

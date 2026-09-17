@@ -3,10 +3,18 @@ import { DevicePreview, projectImages } from "./device-preview";
 import { useEffect, useRef, useState, type MouseEvent } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { projects, type PortfolioProject } from "./projects";
+import { websites } from "./websites";
 
-export function Works({ initialSlug }: { initialSlug?: string }) {
+export function Works({
+  initialSlug,
+  collection = "works",
+}: {
+  initialSlug?: string;
+  collection?: "works" | "websites";
+}) {
+  const entries = collection === "websites" ? websites : projects;
   const [selected, setSelected] = useState(
-    () => projects.find((project) => project.slug === initialSlug) || null,
+    () => entries.find((project) => project.slug === initialSlug) || null,
   );
   const viewport = useRef<HTMLDivElement>(null);
   const gallery = useRef<HTMLDivElement>(null);
@@ -20,7 +28,7 @@ export function Works({ initialSlug }: { initialSlug?: string }) {
     history.pushState(
       null,
       "",
-      project ? `/works/${project.slug}/` : "/works/",
+      project ? `/${collection}/${project.slug}/` : `/${collection}/`,
     );
     setSelected(project);
     window.scrollTo(0, 0);
@@ -28,14 +36,14 @@ export function Works({ initialSlug }: { initialSlug?: string }) {
   useEffect(() => {
     const sync = () => {
       setSelected(
-        projects.find(
+        entries.find(
           (project) => project.slug === location.pathname.split("/")[2],
         ) || null,
       );
     };
     addEventListener("popstate", sync);
     return () => removeEventListener("popstate", sync);
-  }, []);
+  }, [entries]);
   useEffect(() => {
     const element = viewport.current;
     const row = gallery.current;
@@ -43,7 +51,8 @@ export function Works({ initialSlug }: { initialSlug?: string }) {
     let target = 0,
       frame = 0;
     try {
-      target = Number(sessionStorage.getItem("folio:works:position")) || 0;
+      target =
+        Number(sessionStorage.getItem(`folio:${collection}:position`)) || 0;
       element.scrollLeft = target;
     } catch {
       /* Optional position memory. */
@@ -88,7 +97,7 @@ export function Works({ initialSlug }: { initialSlug?: string }) {
     const remember = () => {
       try {
         sessionStorage.setItem(
-          "folio:works:position",
+          `folio:${collection}:position`,
           String(element.scrollLeft),
         );
       } catch {
@@ -117,23 +126,35 @@ export function Works({ initialSlug }: { initialSlug?: string }) {
       element.removeEventListener("pointerdown", pointer);
       element.removeEventListener("keydown", pointer);
     };
-  }, [selected]);
+  }, [selected, collection]);
 
   if (selected)
     return (
-      <ProjectDetail key={selected.slug} project={selected} onNavigate={open} />
+      <ProjectDetail
+        key={selected.slug}
+        project={selected}
+        collection={collection}
+        entries={entries}
+        onNavigate={open}
+      />
     );
   return (
-    <section className="folio-works-index" aria-label="All work">
+    <section
+      className="folio-works-index"
+      data-collection={collection}
+      aria-label={collection === "websites" ? "Websites" : "All work"}
+    >
       <div className="folio-works-heading">
-        <h1>ALL WORK</h1>
-        <span>({projects.length})</span>
+        <h1>{collection === "websites" ? "WEBSITES" : "ALL WORK"}</h1>
+        <span>({entries.length})</span>
       </div>
       <div
         className="folio-works-viewport"
         ref={viewport}
         tabIndex={0}
-        aria-label="Project gallery"
+        aria-label={
+          collection === "websites" ? "Website gallery" : "Project gallery"
+        }
         onKeyDown={(event) => {
           if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
             event.preventDefault();
@@ -147,10 +168,10 @@ export function Works({ initialSlug }: { initialSlug?: string }) {
         }}
       >
         <div className="folio-works-track" ref={gallery}>
-          {projects.map((project, index) => (
+          {entries.map((project, index) => (
             <article className="folio-work-item" key={project.slug}>
               <a
-                href={`/works/${project.slug}/`}
+                href={`/${collection}/${project.slug}/`}
                 onClick={(event) => open(event, project)}
                 aria-label={`View ${project.name} project details`}
               >
@@ -165,10 +186,11 @@ export function Works({ initialSlug }: { initialSlug?: string }) {
                 <span>{String(index + 1).padStart(2, "0")}.</span>
                 <div>
                   <p>
-                    {project.category} — {project.year}
+                    {project.category}
+                    {project.year ? ` — ${project.year}` : ""}
                   </p>
                   <a
-                    href={`/works/${project.slug}/`}
+                    href={`/${collection}/${project.slug}/`}
                     onClick={(event) => open(event, project)}
                   >
                     {project.name}
@@ -185,15 +207,19 @@ export function Works({ initialSlug }: { initialSlug?: string }) {
 
 function ProjectDetail({
   project,
+  collection,
+  entries,
   onNavigate,
 }: {
   project: PortfolioProject;
+  collection: "works" | "websites";
+  entries: PortfolioProject[];
   onNavigate: (
     event: MouseEvent<HTMLAnchorElement>,
     project: PortfolioProject | null,
   ) => void;
 }) {
-  const next = projects[(projects.indexOf(project) + 1) % projects.length];
+  const next = entries[(entries.indexOf(project) + 1) % entries.length];
   useEffect(() => {
     document
       .querySelector<HTMLElement>(".folio-detail-back")
@@ -202,12 +228,13 @@ function ProjectDetail({
   return (
     <section
       className="folio-project-detail"
+      data-collection={collection}
       aria-label={`${project.name} project details`}
     >
       <div className="folio-detail-copy">
         <a
           className="folio-detail-back"
-          href="/works/"
+          href={`/${collection}/`}
           onClick={(event) => onNavigate(event, null)}
         >
           <ArrowLeft size={15} /> Back
@@ -223,18 +250,24 @@ function ProjectDetail({
             <dl>
               <div>
                 <dt>Project</dt>
-                <dd>Personal portfolio</dd>
+                <dd>{collection === "websites" ? "Website" : "Application"}</dd>
               </div>
-              <div>
-                <dt>Year</dt>
-                <dd>{project.year}</dd>
-              </div>
+              {project.year && (
+                <div>
+                  <dt>Year</dt>
+                  <dd>{project.year}</dd>
+                </div>
+              )}
               <div>
                 <dt>Preview</dt>
                 <dd>
-                  <a href={project.liveUrl ?? `/${project.slug}/`}>
-                    See It Live <ArrowRight size={15} />
-                  </a>
+                  {project.archived ? (
+                    <span data-archive>Archived website</span>
+                  ) : (
+                    <a href={project.liveUrl ?? `/${project.slug}/`}>
+                      See It Live <ArrowRight size={15} />
+                    </a>
+                  )}
                 </dd>
               </div>
               <div>
@@ -248,9 +281,11 @@ function ProjectDetail({
             </dl>
           </div>
           <div className="folio-detail-row folio-detail-next">
-            <span className="folio-eyebrow">Next project</span>
+            <span className="folio-eyebrow">
+              Next {collection === "websites" ? "website" : "project"}
+            </span>
             <a
-              href={`/works/${next.slug}/`}
+              href={`/${collection}/${next.slug}/`}
               onClick={(event) => onNavigate(event, next)}
             >
               {next.name}
@@ -265,21 +300,35 @@ function ProjectDetail({
       >
         {projectImages(project).map((preview, index) => (
           <figure key={preview.src}>
-            <DevicePreview project={project} image={preview} loading={index === 0 ? "eager" : "lazy"} />
+            <DevicePreview
+              project={project}
+              image={preview}
+              loading={index === 0 ? "eager" : "lazy"}
+            />
             <figcaption>{preview.caption}</figcaption>
           </figure>
         ))}
         <div className="folio-detail-features">
-          <span className="folio-eyebrow">Try the experience</span>
+          <span className="folio-eyebrow">
+            {project.archived
+              ? "Project archive"
+              : collection === "websites"
+                ? "Visit the website"
+                : "Try the experience"}
+          </span>
           {project.features.map((feature, index) => (
             <p key={feature}>
               <small>0{index + 1}</small>
               {feature}
             </p>
           ))}
-          <a href={project.liveUrl ?? `/${project.slug}/`}>
-            Open {project.name} <ArrowRight size={26} />
-          </a>
+          {project.archived ? (
+            <p>Desktop and mobile views preserved from the website build.</p>
+          ) : (
+            <a href={project.liveUrl ?? `/${project.slug}/`}>
+              Open {project.name} <ArrowRight size={26} />
+            </a>
+          )}
         </div>
       </div>
     </section>

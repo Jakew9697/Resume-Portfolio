@@ -14,7 +14,7 @@ export default function FolioExperience({
   page = "home",
   projectSlug,
 }: {
-  page?: "home" | "about" | "works" | "contact";
+  page?: "home" | "about" | "works" | "websites" | "contact";
   projectSlug?: string;
 }) {
   const menu = useRef<HTMLDialogElement>(null);
@@ -96,26 +96,16 @@ export default function FolioExperience({
         </button>
         <nav aria-label="Portfolio pages">
           {[
-            ["/", "Home"],
-            ["/about/", "About"],
-            ["/works/", "Works"],
-            ["mailto:jake@syncgr.com", "Contact"],
-          ].map(([href, label], index) => (
+            ["/", "Home", "home"],
+            ["/about/", "About", "about"],
+            ["/works/", "Works", "works"],
+            ["/websites/", "Websites", "websites"],
+            ["mailto:jake@syncgr.com", "Contact", "contact"],
+          ].map(([href, label, destination], index) => (
             <a
               key={href}
               href={href}
-              aria-current={
-                page ===
-                (index === 0
-                  ? "home"
-                  : index === 1
-                    ? "about"
-                    : index === 2
-                      ? "works"
-                      : "contact")
-                  ? "page"
-                  : undefined
-              }
+              aria-current={page === destination ? "page" : undefined}
               onClick={() => {
                 if (href.startsWith("mailto:")) setOpen(false);
               }}
@@ -144,8 +134,8 @@ export default function FolioExperience({
         </div>
       </dialog>
       <main>
-        {page === "works" ? (
-          <Works initialSlug={projectSlug} />
+        {page === "works" || page === "websites" ? (
+          <Works initialSlug={projectSlug} collection={page} />
         ) : (
           <Journey page={page}>
             {page === "home" ? (
