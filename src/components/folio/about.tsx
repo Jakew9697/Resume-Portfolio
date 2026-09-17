@@ -99,7 +99,7 @@ export function AboutContent() {
             ],
             [
               "DOCUMENTS",
-              "Documents / RFP workspace",
+              "Documents / RFP Response Builder",
               "From source material to finished PDF",
             ],
             [

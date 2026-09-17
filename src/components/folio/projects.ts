@@ -2,11 +2,11 @@ export const projects = [
   {
     slug: "prospects",
     name: "Prospects",
-    category: "Sales operations",
+    category: "Lead management",
     year: "2026",
     scope: ["Product design", "Full-stack development"],
     overview:
-      "A map-based sales workspace for finding businesses, organizing prospects, and keeping the next conversation in view.",
+      "A map-based lead-management workspace for finding businesses, organizing prospects, and tracking sales follow-up.",
     features: [
       "Explore a live Google Map",
       "Find and save nearby businesses",
@@ -65,17 +65,17 @@ export const projects = [
   },
   {
     slug: "rfp",
-    name: "RFP workspace",
-    category: "Research & proposals",
+    name: "RFP Response Builder",
+    category: "Construction proposals",
     year: "2026",
     scope: ["Product design", "AI workflow development"],
     overview:
-      "A proposal workspace for reviewing requirements, developing a response, and keeping the final document grounded in the supplied material.",
+      "A response builder that helps construction companies quickly produce high-quality responses to requests for proposals, using their own qualifications, project references, and delivery approach.",
     features: [
-      "Review supplied requirements",
-      "Build a response outline",
-      "Refine the proposal",
-      "Export the result as a PDF",
+      "Review the request for proposals",
+      "Add company qualifications and project references",
+      "Draft and refine the response section by section",
+      "Export a polished response as a PDF",
     ],
     technology: "Document parsing / AI / React / AWS",
   },
