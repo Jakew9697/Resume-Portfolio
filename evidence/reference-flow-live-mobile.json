@@ -1,0 +1,293 @@
+[
+  {
+    "checks": [
+      {
+        "detail": {
+          "bottom": 65,
+          "height": 65,
+          "left": 0,
+          "right": 390,
+          "top": 0,
+          "width": 390,
+          "x": 0,
+          "y": 0
+        },
+        "name": "Reference navigation dimensions",
+        "passed": true
+      },
+      {
+        "detail": {
+          "document": 390,
+          "width": 390
+        },
+        "name": "No document horizontal overflow",
+        "passed": true
+      },
+      {
+        "name": "Reference fonts loaded",
+        "passed": true
+      },
+      {
+        "name": "Removed slide counters and top desktop navigation",
+        "passed": true
+      },
+      {
+        "name": "Menu opens and locks background",
+        "passed": true
+      },
+      {
+        "name": "Separate page destinations",
+        "passed": true
+      },
+      {
+        "name": "Menu closes and releases background",
+        "passed": true
+      },
+      {
+        "name": "Mobile chapters stack vertically",
+        "passed": true
+      },
+      {
+        "name": "All loaded images valid",
+        "passed": true
+      }
+    ],
+    "passed": 9,
+    "total": 9,
+    "url": "https://jakeworsham.syncgr.com/",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "checks": [
+      {
+        "detail": {
+          "bottom": 65,
+          "height": 65,
+          "left": 0,
+          "right": 390,
+          "top": 0,
+          "width": 390,
+          "x": 0,
+          "y": 0
+        },
+        "name": "Reference navigation dimensions",
+        "passed": true
+      },
+      {
+        "detail": {
+          "document": 390,
+          "width": 390
+        },
+        "name": "No document horizontal overflow",
+        "passed": true
+      },
+      {
+        "name": "Reference fonts loaded",
+        "passed": true
+      },
+      {
+        "name": "Removed slide counters and top desktop navigation",
+        "passed": true
+      },
+      {
+        "name": "Menu opens and locks background",
+        "passed": true
+      },
+      {
+        "name": "Separate page destinations",
+        "passed": true
+      },
+      {
+        "name": "Menu closes and releases background",
+        "passed": true
+      },
+      {
+        "name": "Mobile chapters stack vertically",
+        "passed": true
+      },
+      {
+        "name": "Mobile About text precedes portrait",
+        "passed": true
+      },
+      {
+        "name": "All loaded images valid",
+        "passed": true
+      }
+    ],
+    "passed": 10,
+    "total": 10,
+    "url": "https://jakeworsham.syncgr.com/about/",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "checks": [
+      {
+        "detail": {
+          "bottom": 65,
+          "height": 65,
+          "left": 0,
+          "right": 390,
+          "top": 0,
+          "width": 390,
+          "x": 0,
+          "y": 0
+        },
+        "name": "Reference navigation dimensions",
+        "passed": true
+      },
+      {
+        "detail": {
+          "document": 390,
+          "width": 390
+        },
+        "name": "No document horizontal overflow",
+        "passed": true
+      },
+      {
+        "name": "Reference fonts loaded",
+        "passed": true
+      },
+      {
+        "name": "Removed slide counters and top desktop navigation",
+        "passed": true
+      },
+      {
+        "name": "Menu opens and locks background",
+        "passed": true
+      },
+      {
+        "name": "Separate page destinations",
+        "passed": true
+      },
+      {
+        "name": "Menu closes and releases background",
+        "passed": true
+      },
+      {
+        "name": "Six unframed projects",
+        "passed": true
+      },
+      {
+        "name": "prospects: opens full-screen detail",
+        "passed": true
+      },
+      {
+        "name": "prospects: native live-demo link",
+        "passed": true
+      },
+      {
+        "name": "prospects: title fits",
+        "passed": true
+      },
+      {
+        "name": "prospects: back returns to gallery",
+        "passed": true
+      },
+      {
+        "name": "helga: opens full-screen detail",
+        "passed": true
+      },
+      {
+        "name": "helga: native live-demo link",
+        "passed": true
+      },
+      {
+        "name": "helga: title fits",
+        "passed": true
+      },
+      {
+        "name": "helga: back returns to gallery",
+        "passed": true
+      },
+      {
+        "name": "receptionist: opens full-screen detail",
+        "passed": true
+      },
+      {
+        "name": "receptionist: native live-demo link",
+        "passed": true
+      },
+      {
+        "name": "receptionist: title fits",
+        "passed": true
+      },
+      {
+        "name": "receptionist: back returns to gallery",
+        "passed": true
+      },
+      {
+        "name": "documents: opens full-screen detail",
+        "passed": true
+      },
+      {
+        "name": "documents: native live-demo link",
+        "passed": true
+      },
+      {
+        "name": "documents: title fits",
+        "passed": true
+      },
+      {
+        "name": "documents: back returns to gallery",
+        "passed": true
+      },
+      {
+        "name": "rfp: opens full-screen detail",
+        "passed": true
+      },
+      {
+        "name": "rfp: native live-demo link",
+        "passed": true
+      },
+      {
+        "name": "rfp: title fits",
+        "passed": true
+      },
+      {
+        "name": "rfp: back returns to gallery",
+        "passed": true
+      },
+      {
+        "name": "cms: opens full-screen detail",
+        "passed": true
+      },
+      {
+        "name": "cms: native live-demo link",
+        "passed": true
+      },
+      {
+        "name": "cms: title fits",
+        "passed": true
+      },
+      {
+        "name": "cms: back returns to gallery",
+        "passed": true
+      },
+      {
+        "name": "Next project navigation",
+        "passed": true
+      },
+      {
+        "name": "Browser Back updates project view",
+        "passed": true
+      },
+      {
+        "name": "All loaded images valid",
+        "passed": true
+      }
+    ],
+    "passed": 35,
+    "total": 35,
+    "url": "https://jakeworsham.syncgr.com/works/",
+    "viewport": [
+      390,
+      844
+    ]
+  }
+]

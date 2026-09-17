@@ -1,5 +1,7 @@
 # Independent portfolio carousels — September 16, 2026
 
+Historical release: superseded by `reference-match-verification.md` after Jake asked for the reference website's actual structure and interactions.
+
 Live: https://jakeworsham.syncgr.com
 
 Home, About, Work, and Contact now each own an independent horizontal carousel. Home has two slides, About has three, Work has six, and Contact has two. The former Approach content is in About; the previous `#approach` link still opens that page. Navigation uses normal page hashes, including browser back/forward.
