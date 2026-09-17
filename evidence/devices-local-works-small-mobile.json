@@ -1,0 +1,221 @@
+{
+  "checks": [
+    {
+      "detail": {
+        "bottom": 65,
+        "height": 65,
+        "left": 0,
+        "right": 320,
+        "top": 0,
+        "width": 320,
+        "x": 0,
+        "y": 0
+      },
+      "name": "Reference navigation dimensions",
+      "passed": true
+    },
+    {
+      "detail": {
+        "document": 320,
+        "width": 320
+      },
+      "name": "No document horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "Reference fonts loaded",
+      "passed": true
+    },
+    {
+      "name": "Removed slide counters and top desktop navigation",
+      "passed": true
+    },
+    {
+      "name": "Menu opens and locks background",
+      "passed": true
+    },
+    {
+      "name": "Separate page destinations",
+      "passed": true
+    },
+    {
+      "name": "Menu closes and releases background",
+      "passed": true
+    },
+    {
+      "name": "Seven unframed projects",
+      "passed": true
+    },
+    {
+      "name": "Every preview preserves the complete screenshot",
+      "passed": true
+    },
+    {
+      "name": "Every project is presented inside a device",
+      "passed": true
+    },
+    {
+      "name": "Device bodies stay inside their scenes",
+      "passed": true
+    },
+    {
+      "name": "prospects: opens full-screen detail",
+      "passed": true
+    },
+    {
+      "name": "prospects: native live-demo link",
+      "passed": true
+    },
+    {
+      "name": "prospects: all full screenshots load without cropping",
+      "passed": true
+    },
+    {
+      "name": "prospects: title fits",
+      "passed": true
+    },
+    {
+      "name": "prospects: back returns to gallery",
+      "passed": true
+    },
+    {
+      "name": "helga: opens full-screen detail",
+      "passed": true
+    },
+    {
+      "name": "helga: native live-demo link",
+      "passed": true
+    },
+    {
+      "name": "helga: all full screenshots load without cropping",
+      "passed": true
+    },
+    {
+      "name": "helga: title fits",
+      "passed": true
+    },
+    {
+      "name": "helga: back returns to gallery",
+      "passed": true
+    },
+    {
+      "name": "move-v: opens full-screen detail",
+      "passed": true
+    },
+    {
+      "name": "move-v: native live-demo link",
+      "passed": true
+    },
+    {
+      "name": "move-v: all full screenshots load without cropping",
+      "passed": true
+    },
+    {
+      "name": "move-v: title fits",
+      "passed": true
+    },
+    {
+      "name": "move-v: back returns to gallery",
+      "passed": true
+    },
+    {
+      "name": "receptionist: opens full-screen detail",
+      "passed": true
+    },
+    {
+      "name": "receptionist: native live-demo link",
+      "passed": true
+    },
+    {
+      "name": "receptionist: all full screenshots load without cropping",
+      "passed": true
+    },
+    {
+      "name": "receptionist: title fits",
+      "passed": true
+    },
+    {
+      "name": "receptionist: back returns to gallery",
+      "passed": true
+    },
+    {
+      "name": "documents: opens full-screen detail",
+      "passed": true
+    },
+    {
+      "name": "documents: native live-demo link",
+      "passed": true
+    },
+    {
+      "name": "documents: all full screenshots load without cropping",
+      "passed": true
+    },
+    {
+      "name": "documents: title fits",
+      "passed": true
+    },
+    {
+      "name": "documents: back returns to gallery",
+      "passed": true
+    },
+    {
+      "name": "rfp: opens full-screen detail",
+      "passed": true
+    },
+    {
+      "name": "rfp: native live-demo link",
+      "passed": true
+    },
+    {
+      "name": "rfp: all full screenshots load without cropping",
+      "passed": true
+    },
+    {
+      "name": "rfp: title fits",
+      "passed": true
+    },
+    {
+      "name": "rfp: back returns to gallery",
+      "passed": true
+    },
+    {
+      "name": "cms: opens full-screen detail",
+      "passed": true
+    },
+    {
+      "name": "cms: native live-demo link",
+      "passed": true
+    },
+    {
+      "name": "cms: all full screenshots load without cropping",
+      "passed": true
+    },
+    {
+      "name": "cms: title fits",
+      "passed": true
+    },
+    {
+      "name": "cms: back returns to gallery",
+      "passed": true
+    },
+    {
+      "name": "Next project navigation",
+      "passed": true
+    },
+    {
+      "name": "Browser Back updates project view",
+      "passed": true
+    },
+    {
+      "name": "All loaded images valid",
+      "passed": true
+    }
+  ],
+  "passed": 49,
+  "total": 49,
+  "url": "http://127.0.0.1:3046/works/",
+  "viewport": [
+    320,
+    740
+  ]
+}

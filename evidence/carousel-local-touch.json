@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "input": "Chrome native touchStart/touchMove/touchEnd",
+  "before": 1,
+  "after": 2,
+  "width": 390,
+  "url": "http://127.0.0.1:3046/#work",
+  "checkedAt": "2026-09-16T23:34:44.743Z"
+}

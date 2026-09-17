@@ -1,0 +1,24 @@
+{
+  "at": "2026-09-16T21:10:24.686Z",
+  "api": "https://lp23bzpa2i2ikouf3xxcfi3grq0gbcfk.lambda-url.us-east-1.on.aws",
+  "checks": [
+    {
+      "name": "Polly returns playable audio",
+      "passed": true,
+      "bytes": 15740
+    },
+    {
+      "name": "Transcribe converts real audio to text",
+      "passed": true,
+      "transcript": "Add a task to review the voice demonstration."
+    },
+    {
+      "name": "Audio job ownership enforced",
+      "passed": true
+    },
+    {
+      "name": "Voice transcript executes and saves action",
+      "passed": true
+    }
+  ]
+}

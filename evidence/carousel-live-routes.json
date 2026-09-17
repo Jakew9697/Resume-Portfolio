@@ -1,0 +1,33 @@
+{
+  "returnedToHelgaSlide": true,
+  "routes": [
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/prospects/",
+      "status": 200
+    },
+    {
+      "path": "/helga/",
+      "status": 200
+    },
+    {
+      "path": "/receptionist/",
+      "status": 200
+    },
+    {
+      "path": "/documents/",
+      "status": 200
+    },
+    {
+      "path": "/rfp/",
+      "status": 200
+    },
+    {
+      "path": "/cms/",
+      "status": 200
+    }
+  ]
+}

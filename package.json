@@ -3,26 +3,41 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "prebuild": "node scripts/prepare-static.mjs",
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
-    "start": "next start"
+    "build": "next build",
+    "start": "next start",
+    "check": "tsc --noEmit",
+    "build:api": "node scripts/build-api.mjs",
+    "test:api": "node --import tsx --test server/*.test.ts"
   },
   "dependencies": {
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "framer-motion": "^12.23.22",
+    "@aws-sdk/client-bedrock-runtime": "^3.1134.0",
+    "@aws-sdk/client-dynamodb": "^3.1134.0",
+    "@aws-sdk/client-polly": "^3.1134.0",
+    "@aws-sdk/client-s3": "^3.1134.0",
+    "@aws-sdk/client-ssm": "^3.1134.0",
+    "@aws-sdk/client-transcribe": "^3.1134.0",
+    "@aws-sdk/lib-dynamodb": "^3.1134.0",
+    "hono": "4.13.8",
     "lucide-react": "^0.545.0",
-    "next": "15.5.4",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "tailwind-merge": "^3.3.1"
+    "next": "16.3.5",
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^6.3.289",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "zod": "^4.6.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/google.maps": "^3.66.3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "esbuild": "^0.28.2",
+    "fflate": "^0.8.2",
     "tailwindcss": "^4",
+    "tsx": "^4.23.13",
     "typescript": "^5"
   }
 }

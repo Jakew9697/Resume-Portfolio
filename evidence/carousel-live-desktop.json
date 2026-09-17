@@ -1,0 +1,189 @@
+{
+  "checkedAt": "2026-09-16T23:36:00.829Z",
+  "checks": [
+    {
+      "detail": {
+        "count": 2
+      },
+      "name": "home: independent carousel",
+      "passed": true
+    },
+    {
+      "detail": {
+        "cardFree": true,
+        "height": 1000,
+        "link": null,
+        "width": 1376
+      },
+      "name": "home: introduction",
+      "passed": true
+    },
+    {
+      "detail": {
+        "cardFree": true,
+        "height": 1000,
+        "link": null,
+        "width": 1376
+      },
+      "name": "home: practice",
+      "passed": true
+    },
+    {
+      "detail": {
+        "count": 3
+      },
+      "name": "about: independent carousel",
+      "passed": true
+    },
+    {
+      "detail": {
+        "cardFree": true,
+        "height": 1000,
+        "link": null,
+        "width": 1376
+      },
+      "name": "about: jake",
+      "passed": true
+    },
+    {
+      "detail": {
+        "cardFree": true,
+        "height": 1000,
+        "link": null,
+        "width": 1376
+      },
+      "name": "about: design",
+      "passed": true
+    },
+    {
+      "detail": {
+        "cardFree": true,
+        "height": 1000,
+        "link": null,
+        "width": 1376
+      },
+      "name": "about: build",
+      "passed": true
+    },
+    {
+      "detail": {
+        "count": 6
+      },
+      "name": "work: independent carousel",
+      "passed": true
+    },
+    {
+      "detail": {
+        "cardFree": true,
+        "height": 1000,
+        "link": "/prospects/",
+        "width": 1376
+      },
+      "name": "work: prospects",
+      "passed": true
+    },
+    {
+      "detail": {
+        "cardFree": true,
+        "height": 1000,
+        "link": "/helga/",
+        "width": 1376
+      },
+      "name": "work: helga",
+      "passed": true
+    },
+    {
+      "detail": {
+        "cardFree": true,
+        "height": 1000,
+        "link": "/receptionist/",
+        "width": 1376
+      },
+      "name": "work: receptionist",
+      "passed": true
+    },
+    {
+      "detail": {
+        "cardFree": true,
+        "height": 1000,
+        "link": "/documents/",
+        "width": 1376
+      },
+      "name": "work: documents",
+      "passed": true
+    },
+    {
+      "detail": {
+        "cardFree": true,
+        "height": 1000,
+        "link": "/rfp/",
+        "width": 1376
+      },
+      "name": "work: rfp",
+      "passed": true
+    },
+    {
+      "detail": {
+        "cardFree": true,
+        "height": 1000,
+        "link": "/cms/",
+        "width": 1376
+      },
+      "name": "work: cms",
+      "passed": true
+    },
+    {
+      "detail": {
+        "count": 2
+      },
+      "name": "contact: independent carousel",
+      "passed": true
+    },
+    {
+      "detail": {
+        "cardFree": true,
+        "height": 1000,
+        "link": null,
+        "width": 1376
+      },
+      "name": "contact: next-chapter",
+      "passed": true
+    },
+    {
+      "detail": {
+        "cardFree": true,
+        "height": 1000,
+        "link": null,
+        "width": 1376
+      },
+      "name": "contact: elsewhere",
+      "passed": true
+    },
+    {
+      "name": "home: position retained after page change",
+      "passed": true
+    },
+    {
+      "name": "about: position retained after page change",
+      "passed": true
+    },
+    {
+      "name": "work: position retained after page change",
+      "passed": true
+    },
+    {
+      "name": "contact: position retained after page change",
+      "passed": true
+    },
+    {
+      "name": "No document overflow",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "url": "https://jakeworsham.syncgr.com/#contact",
+  "viewport": [
+    1440,
+    1000
+  ]
+}

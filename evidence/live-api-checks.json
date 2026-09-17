@@ -1,0 +1,86 @@
+{
+  "at": "2026-09-16T22:40:17.489Z",
+  "api": "https://lp23bzpa2i2ikouf3xxcfi3grq0gbcfk.lambda-url.us-east-1.on.aws",
+  "checks": [
+    {
+      "name": "Public health",
+      "passed": true
+    },
+    {
+      "name": "Origin rejected",
+      "passed": true
+    },
+    {
+      "name": "Missing token rejected",
+      "passed": true
+    },
+    {
+      "name": "Invalid token rejected",
+      "passed": true
+    },
+    {
+      "name": "Unknown workspace rejected",
+      "passed": true
+    },
+    {
+      "name": "Prospect saved and read",
+      "passed": true
+    },
+    {
+      "name": "Stale write rejected",
+      "passed": true
+    },
+    {
+      "name": "Invalid form rejected",
+      "passed": true
+    },
+    {
+      "name": "Independent guest isolation",
+      "passed": true
+    },
+    {
+      "name": "Helga tools save task, calendar event and email draft",
+      "passed": true,
+      "actions": [
+        "Added task: Review the live portfolio",
+        "Added event: Portfolio walkthrough",
+        "Saved draft: Portfolio ready"
+      ]
+    },
+    {
+      "name": "Helga completion saves",
+      "passed": true
+    },
+    {
+      "name": "Document generated and persisted",
+      "passed": true,
+      "characters": 2096
+    },
+    {
+      "name": "RFP cites source and marks missing experience",
+      "passed": true
+    },
+    {
+      "name": "Receptionist stores callback and transcript",
+      "passed": true
+    },
+    {
+      "name": "Polly returns playable audio",
+      "passed": true,
+      "bytes": 15740
+    },
+    {
+      "name": "Transcribe converts real audio to text",
+      "passed": true,
+      "transcript": "Add a task to review the voice demonstration."
+    },
+    {
+      "name": "Audio job ownership enforced",
+      "passed": true
+    },
+    {
+      "name": "Voice transcript executes and saves action",
+      "passed": true
+    }
+  ]
+}

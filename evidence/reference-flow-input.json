@@ -1,0 +1,26 @@
+{
+  "localDesktop": {
+    "viewport": [1440, 1000],
+    "nativeEscapeClosesMenu": true,
+    "escapeRestoresMenuTriggerFocus": true,
+    "reducedMotionMatched": true,
+    "reducedMotionRailTransitionDuration": "0s",
+    "offscreenWorkLinkFocusMovesChapterIntoView": true,
+    "focusedChapterScrollPosition": 5320
+  },
+  "productionMobile": {
+    "viewport": [390, 844],
+    "directDetailRoute": "https://jakeworsham.syncgr.com/works/helga/",
+    "nativeSeeItLiveClickDestination": "https://jakeworsham.syncgr.com/helga/",
+    "helgaAppElementLoaded": true,
+    "browserBackRestoresDetailRoute": true,
+    "detailBackReturnsToWorks": true,
+    "nativeEscapeClosesMenu": true,
+    "runtimeErrors": []
+  },
+  "deployment": {
+    "distribution": "E1EMVV1XZZTJAS",
+    "invalidation": "I3I7N4IFKIVFWJTSCHAQ2YSUZ2",
+    "status": "Completed"
+  }
+}

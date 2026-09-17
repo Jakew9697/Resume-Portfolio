@@ -1,0 +1,12 @@
+# Jake Worsham
+
+> A working software portfolio with isolated, interactive demonstrations.
+
+- /prospects/: Sales prospect workflow, contacts, pipeline, notes, and exports.
+- /helga/: Voice and text assistant with a personal task and calendar workspace.
+- /receptionist/: Browser-based customer intake and callback summaries.
+- /documents/: Notes to editable documents and PDF exports.
+- /rfp/: Reference-grounded proposal drafting.
+- /cms/: Draft, preview, and publish a sample website.
+
+All business data in the demonstrations is fictional. Contact: jake@syncgr.com.
