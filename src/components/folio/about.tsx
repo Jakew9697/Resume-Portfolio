@@ -1,4 +1,6 @@
 import { ArrowRight } from "lucide-react";
+import { DevicePreview } from "./device-preview";
+import { projects } from "./projects";
 export function AboutContent() {
   return (
     <>
@@ -40,12 +42,7 @@ export function AboutContent() {
           something useful.
         </p>
         <div className="folio-about-image">
-          <img
-            src="/projects/prospects.webp"
-            alt="Prospects map workspace"
-            width={1440}
-            height={1000}
-          />
+          <DevicePreview project={projects[0]} />
         </div>
       </section>
       <section
@@ -132,12 +129,7 @@ export function AboutContent() {
           From a map full of opportunities to an assistant that listens — each
           project explores a different way software can make work simpler.
         </p>
-        <img
-          src="/projects/helga.webp"
-          alt="Helga assistant dashboard"
-          width={1440}
-          height={1000}
-        />
+        <DevicePreview project={projects[1]} />
         <a href="/works/" className="folio-inline-link">
           Explore the work <ArrowRight size={24} />
         </a>

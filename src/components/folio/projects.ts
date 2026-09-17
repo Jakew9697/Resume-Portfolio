@@ -1,3 +1,5 @@
+import type { DeviceKind, ProjectImage } from "./device-preview";
+
 export type PortfolioProject = {
   slug: string;
   name: string;
@@ -7,13 +9,15 @@ export type PortfolioProject = {
   overview: string;
   features: string[];
   technology: string;
+  device: DeviceKind;
   liveUrl?: string;
-  images?: { src: string; alt: string; width: number; height: number; caption: string }[];
+  images?: ProjectImage[];
 };
 
 export const projects: PortfolioProject[] = [
   {
     slug: "prospects",
+    device: "desktop",
     name: "Prospects",
     category: "Lead management",
     year: "2026",
@@ -30,6 +34,7 @@ export const projects: PortfolioProject[] = [
   },
   {
     slug: "helga",
+    device: "laptop",
     name: "Helga",
     category: "AI assistant",
     year: "2026",
@@ -46,6 +51,7 @@ export const projects: PortfolioProject[] = [
   },
   {
     slug: "move-v",
+    device: "desktop",
     name: "Move V",
     category: "Cross-platform streaming",
     year: "2026",
@@ -61,14 +67,15 @@ export const projects: PortfolioProject[] = [
     technology: "Next.js / React Native / Expo / TV interfaces / AWS",
     liveUrl: "https://move-v.app/",
     images: [
-      { src: "/projects/move-v-desktop.png", alt: "Move V populated desktop catalog", width: 1440, height: 1000, caption: "Desktop — the populated development catalog" },
-      { src: "/projects/move-v-tv.png", alt: "Move V television interface with its film catalog", width: 1920, height: 1080, caption: "TV — webOS / Tizen interface, browser preview" },
-      { src: "/projects/move-v-tablet.png", alt: "Move V catalog on a tablet-sized screen", width: 1024, height: 768, caption: "Tablet — responsive web interface" },
-      { src: "/projects/move-v-mobile.png", alt: "Move V catalog on a phone-sized screen", width: 390, height: 844, caption: "Phone — responsive web interface" },
+      { src: "/projects/move-v-desktop.png", alt: "Move V populated desktop catalog", width: 1440, height: 1000, caption: "Desktop — the populated development catalog", device: "desktop" },
+      { src: "/projects/move-v-tv.png", alt: "Move V television interface with its film catalog", width: 1920, height: 1080, caption: "TV — webOS / Tizen interface, browser preview", device: "tv" },
+      { src: "/projects/move-v-tablet.png", alt: "Move V catalog on a tablet-sized screen", width: 1024, height: 768, caption: "Tablet — responsive web interface", device: "tablet" },
+      { src: "/projects/move-v-mobile.png", alt: "Move V catalog on a phone-sized screen", width: 390, height: 844, caption: "Phone — responsive web interface", device: "phone" },
     ],
   },
   {
     slug: "receptionist",
+    device: "tablet",
     name: "Receptionist",
     category: "Voice AI",
     year: "2026",
@@ -85,6 +92,7 @@ export const projects: PortfolioProject[] = [
   },
   {
     slug: "documents",
+    device: "laptop",
     name: "Documents",
     category: "Document automation",
     year: "2026",
@@ -101,6 +109,7 @@ export const projects: PortfolioProject[] = [
   },
   {
     slug: "rfp",
+    device: "desktop",
     name: "RFP Response Builder",
     category: "Construction proposals",
     year: "2026",
@@ -117,6 +126,7 @@ export const projects: PortfolioProject[] = [
   },
   {
     slug: "cms",
+    device: "laptop",
     name: "Content studio",
     category: "Content publishing",
     year: "2026",

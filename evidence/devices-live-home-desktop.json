@@ -1,0 +1,93 @@
+{
+  "checks": [
+    {
+      "detail": {
+        "bottom": 1000,
+        "height": 1000,
+        "left": 0,
+        "right": 64,
+        "top": 0,
+        "width": 64,
+        "x": 0,
+        "y": 0
+      },
+      "name": "Reference navigation dimensions",
+      "passed": true
+    },
+    {
+      "detail": {
+        "document": 1440,
+        "width": 1440
+      },
+      "name": "No document horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "Reference fonts loaded",
+      "passed": true
+    },
+    {
+      "name": "Removed slide counters and top desktop navigation",
+      "passed": true
+    },
+    {
+      "name": "Menu opens and locks background",
+      "passed": true
+    },
+    {
+      "name": "Separate page destinations",
+      "passed": true
+    },
+    {
+      "name": "Menu closes and releases background",
+      "passed": true
+    },
+    {
+      "name": "Horizontal chapter: Introduction",
+      "passed": true
+    },
+    {
+      "name": "Horizontal chapter: About Jake",
+      "passed": true
+    },
+    {
+      "name": "Horizontal chapter: The work",
+      "passed": true
+    },
+    {
+      "name": "Horizontal chapter: Selected work",
+      "passed": true
+    },
+    {
+      "name": "Horizontal chapter: What I do",
+      "passed": true
+    },
+    {
+      "name": "Horizontal chapter: Selected experience",
+      "passed": true
+    },
+    {
+      "name": "Horizontal chapter: Contact",
+      "passed": true
+    },
+    {
+      "name": "Work interlude holds while mosaic expands",
+      "passed": true
+    },
+    {
+      "name": "Device scenes contain their positioning layers",
+      "passed": true
+    },
+    {
+      "name": "All loaded images valid",
+      "passed": true
+    }
+  ],
+  "passed": 17,
+  "total": 17,
+  "url": "https://jakeworsham.syncgr.com/?review=devices",
+  "viewport": [
+    1440,
+    1000
+  ]
+}

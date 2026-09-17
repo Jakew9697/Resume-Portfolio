@@ -1,4 +1,5 @@
 "use client";
+import { DevicePreview, projectImages } from "./device-preview";
 import { useEffect, useRef, useState, type MouseEvent } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { projects, type PortfolioProject } from "./projects";
@@ -154,11 +155,8 @@ export function Works({ initialSlug }: { initialSlug?: string }) {
                 aria-label={`View ${project.name} project details`}
               >
                 <div className="folio-work-image">
-                  <img
-                    src={project.images?.[0].src ?? `/projects/${project.slug}.webp`}
-                    alt={project.images?.[0].alt ?? `${project.name} application`}
-                    width={project.images?.[0].width ?? 1440}
-                    height={project.images?.[0].height ?? 1000}
+                  <DevicePreview
+                    project={project}
                     loading={index < 4 ? "eager" : "lazy"}
                   />
                 </div>
@@ -265,15 +263,9 @@ function ProjectDetail({
         tabIndex={0}
         aria-label={`${project.name} project gallery`}
       >
-        {(project.images ?? [{
-          src: `/projects/${project.slug}.webp`,
-          alt: `${project.name} full application preview`,
-          width: 1440,
-          height: 1000,
-          caption: project.technology,
-        }]).map((preview) => (
+        {projectImages(project).map((preview, index) => (
           <figure key={preview.src}>
-            <img src={preview.src} alt={preview.alt} width={preview.width} height={preview.height} />
+            <DevicePreview project={project} image={preview} loading={index === 0 ? "eager" : "lazy"} />
             <figcaption>{preview.caption}</figcaption>
           </figure>
         ))}

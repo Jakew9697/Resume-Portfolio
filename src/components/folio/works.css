@@ -68,14 +68,10 @@
 .folio-work-image {
   width: 100%;
 }
-.folio-work-image img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
+.folio-work-image .device-scene {
   transition: opacity 0.25s;
 }
-.folio-work-item > a:hover img {
+.folio-work-item > a:hover .device-scene {
   opacity: 0.85;
 }
 .folio-work-caption {
@@ -197,13 +193,6 @@
 }
 .folio-detail-gallery figure {
   margin: 0 0 24px;
-}
-.folio-detail-gallery figure > img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 90svh;
-  object-fit: contain;
 }
 .folio-detail-gallery figcaption {
   font-size: 11px;

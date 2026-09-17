@@ -56,10 +56,9 @@
   height: 45%;
   overflow: hidden;
 }
-.folio-about-image img {
+.folio-about-image > .device-scene {
   width: 100%;
   height: 100%;
-  object-fit: contain;
 }
 .folio-philosophy {
   background: var(--ink);
@@ -140,11 +139,10 @@
   font-weight: 500;
   line-height: 1.3;
 }
-.folio-about-last > img {
+.folio-about-last > .device-scene {
   position: absolute;
   width: calc(48 * var(--s));
   height: calc(36 * var(--s));
-  object-fit: contain;
   left: 128px;
   bottom: var(--vg);
 }
@@ -153,7 +151,7 @@
   left: 128px;
   top: var(--vg);
 }
-.folio-about-last > div {
+.folio-about-last > div:not(.device-scene) {
   position: absolute;
   bottom: var(--vg);
   left: calc(100% - 67.8 * var(--s));
@@ -249,8 +247,9 @@
     max-width: none;
     font-size: 25px;
   }
-  .folio-about-last > img {
-    position: static;
+  .folio-about-last > .device-scene {
+    position: relative;
+    inset: auto;
     width: 100%;
     height: 300px;
     margin: 40px 0 24px;
@@ -258,7 +257,7 @@
   .folio-about-last > .folio-inline-link {
     position: static;
   }
-  .folio-about-last > div {
+  .folio-about-last > div:not(.device-scene) {
     position: static;
     margin-top: 60px;
   }

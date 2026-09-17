@@ -8,6 +8,7 @@ import "./shell.css";
 import "./home.css";
 import "./about.css";
 import "./works.css";
+import "./device-preview.css";
 
 export default function FolioExperience({
   page = "home",

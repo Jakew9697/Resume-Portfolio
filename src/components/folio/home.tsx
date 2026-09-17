@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { projects } from "./projects";
+import { DevicePreview } from "./device-preview";
 
 function LocalTime() {
   const [time, setTime] = useState("");
@@ -152,13 +153,9 @@ export function HomeContent() {
         </div>
         <div className="folio-mosaic" aria-hidden="true">
           {projects.slice(0, 6).map((project) => (
-            <img
+            <DevicePreview
               key={project.slug}
-              src={project.images?.[0].src ?? `/projects/${project.slug}.webp`}
-              alt=""
-              width={1440}
-              height={1000}
-              loading="lazy"
+              project={project}
             />
           ))}
         </div>
@@ -185,15 +182,11 @@ export function HomeContent() {
             </a>
           ))}
         </div>
-        <div className="folio-hover-preview" data-active={!!preview}>
+        <div className="folio-hover-preview" data-active={!!preview} aria-hidden="true">
           {projects.slice(0, 4).map((project) => (
-            <img
+            <DevicePreview
               key={project.slug}
-              src={project.images?.[0].src ?? `/projects/${project.slug}.webp`}
-              alt=""
-              width={1440}
-              height={1000}
-              loading="lazy"
+              project={project}
               style={{ opacity: preview === project.slug ? 1 : 0 }}
             />
           ))}
@@ -246,13 +239,7 @@ export function HomeContent() {
           ],
         ].map(([title, text, slug], index) => (
           <article className={`folio-service service-${index}`} key={title}>
-            <img
-              src={`/projects/${slug}.webp`}
-              alt=""
-              width={1440}
-              height={1000}
-              loading="lazy"
-            />
+            <DevicePreview project={projects.find((project) => project.slug === slug)!} />
             <span className="folio-service-number">0{index + 1}</span>
             <h2>{title}</h2>
             <p>{text}</p>

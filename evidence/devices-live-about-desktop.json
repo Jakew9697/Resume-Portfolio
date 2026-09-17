@@ -1,0 +1,81 @@
+{
+  "checks": [
+    {
+      "detail": {
+        "bottom": 1000,
+        "height": 1000,
+        "left": 0,
+        "right": 64,
+        "top": 0,
+        "width": 64,
+        "x": 0,
+        "y": 0
+      },
+      "name": "Reference navigation dimensions",
+      "passed": true
+    },
+    {
+      "detail": {
+        "document": 1440,
+        "width": 1440
+      },
+      "name": "No document horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "Reference fonts loaded",
+      "passed": true
+    },
+    {
+      "name": "Removed slide counters and top desktop navigation",
+      "passed": true
+    },
+    {
+      "name": "Menu opens and locks background",
+      "passed": true
+    },
+    {
+      "name": "Separate page destinations",
+      "passed": true
+    },
+    {
+      "name": "Menu closes and releases background",
+      "passed": true
+    },
+    {
+      "name": "Horizontal chapter: About Jake — Portrait",
+      "passed": true
+    },
+    {
+      "name": "Horizontal chapter: About Jake — Introduction",
+      "passed": true
+    },
+    {
+      "name": "Horizontal chapter: About Jake — Approach",
+      "passed": true
+    },
+    {
+      "name": "Horizontal chapter: About Jake — Experience",
+      "passed": true
+    },
+    {
+      "name": "Horizontal chapter: About Jake — Next steps",
+      "passed": true
+    },
+    {
+      "name": "Device scenes contain their positioning layers",
+      "passed": true
+    },
+    {
+      "name": "All loaded images valid",
+      "passed": true
+    }
+  ],
+  "passed": 14,
+  "total": 14,
+  "url": "https://jakeworsham.syncgr.com/about/?review=devices",
+  "viewport": [
+    1440,
+    1000
+  ]
+}

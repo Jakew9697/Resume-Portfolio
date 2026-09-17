@@ -1,0 +1,316 @@
+.device-scene {
+  --studio: #d9dedb;
+  --floor: #b5bfba;
+  --light: #fff9e9;
+  --scene-ratio: 1.269;
+  position: relative;
+  container-type: inline-size;
+  isolation: isolate;
+  width: 100%;
+  aspect-ratio: var(--scene-ratio);
+  overflow: hidden;
+  background: var(--studio);
+}
+.device-studio {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(ellipse at 15% 0, color-mix(in srgb, var(--light) 65%, transparent), transparent 68%),
+    linear-gradient(165deg, transparent 50%, #0000000d);
+}
+.device-studio::before {
+  content: "";
+  position: absolute;
+  inset: -30% -20%;
+  background: repeating-linear-gradient(115deg, transparent 0 22%, #ffffff20 22% 31%, transparent 31% 40%);
+  transform: rotate(-8deg);
+  filter: blur(0.3cqw);
+}
+.device-studio::after {
+  content: "";
+  position: absolute;
+  left: -10%;
+  right: -10%;
+  bottom: -8%;
+  height: 38%;
+  background: linear-gradient(176deg, var(--floor), var(--studio));
+  box-shadow: 0 -1px 0 #ffffff20, 0 -3cqw 8cqw #00000008;
+  transform: skewY(-5deg);
+}
+.device-platform {
+  position: absolute;
+  left: 9%;
+  right: 9%;
+  top: 70%;
+  height: 7%;
+  z-index: -1;
+  border-radius: 50%;
+  background: #00000042;
+  filter: blur(2.8cqw);
+  transform: rotate(-3deg);
+}
+.folio-device {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 79%;
+  transform: translate(-50%, -45%);
+  filter: drop-shadow(0 1cqw 1.6cqw #00000026);
+}
+.device-body {
+  position: relative;
+  padding: 1.5cqw 1cqw 1cqw;
+  background: linear-gradient(125deg, #46484a, #18191b 20%, #090a0b 80%, #4b4d4f);
+  border-radius: 1.5cqw;
+  box-shadow:
+    0 0 0 0.15cqw #85888b,
+    0 0 0 0.35cqw #252729,
+    inset 0 0 0 0.15cqw #ffffff30,
+    0 1.1cqw 1.5cqw #00000020;
+}
+.device-camera {
+  position: absolute;
+  top: 0.45cqw;
+  left: calc(50% - 0.2cqw);
+  width: 0.4cqw;
+  height: 0.4cqw;
+  border-radius: 50%;
+  background: radial-gradient(circle, #28454c 15%, #070809 65%);
+  box-shadow: 0 0 0 0.1cqw #ffffff0c;
+}
+.device-screen {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: 0.5cqw;
+  background: #0b0d10;
+  outline: 1px solid #ffffff1a;
+  outline-offset: -1px;
+}
+.device-screen img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+.device-keyboard {
+  position: relative;
+  margin-left: -7%;
+  width: 114%;
+  height: 2.4cqw;
+  border-radius: 0.15cqw 0.15cqw 50% 50% / 0.15cqw 0.15cqw 80% 80%;
+  background: linear-gradient(#d7d8d9 0, #a5a7a9 30%, #d7d8da 42%, #66686b 92%, #27292b);
+  box-shadow: 0 0.6cqw 0.5cqw #00000030;
+}
+.device-keyboard::before {
+  content: "";
+  position: absolute;
+  width: 14%;
+  height: 32%;
+  left: 43%;
+  top: 0;
+  border-radius: 0 0 0.8cqw 0.8cqw;
+  background: linear-gradient(#77797b, #bcbec0);
+}
+.device-desktop {
+  width: 75%;
+  transform: translate(-50%, -47%);
+}
+.device-desktop .device-body {
+  padding: 1.2cqw 0.8cqw 2.5cqw;
+  border-radius: 0.9cqw;
+  background: linear-gradient(120deg, #36383a, #111214 50%, #424446);
+}
+.device-stand {
+  position: relative;
+  width: 23%;
+  height: 10cqw;
+  margin: 0 auto;
+  background: linear-gradient(90deg, #b8b9b9, #77797b 40%, #b9babb 90%, #d8d9d9);
+  clip-path: polygon(23% 0, 78% 0, 83% 88%, 100% 94%, 100% 100%, 0 100%, 0 94%, 18% 88%);
+}
+.device-desktop::after {
+  content: "";
+  position: absolute;
+  bottom: -0.5cqw;
+  left: 30%;
+  width: 40%;
+  height: 1.2cqw;
+  border-radius: 50% 50% 0.3cqw 0.3cqw;
+  background: linear-gradient(#d1d2d3, #727477);
+  box-shadow: 0 0.5cqw 0.5cqw #00000030;
+}
+.device-tablet {
+  width: 76%;
+  transform: translate(-50%, -50%) rotate(-7deg);
+}
+.device-tablet .device-body {
+  padding: 1.8cqw;
+  border-radius: 3cqw;
+}
+.device-tablet .device-screen {
+  aspect-ratio: 4 / 3;
+  border-radius: 1.2cqw;
+}
+.device-tablet .device-camera {
+  top: 0.65cqw;
+}
+.device-phone {
+  width: 35%;
+  transform: translate(-50%, -50%) rotate(7deg);
+}
+.device-phone .device-body {
+  padding: 2.4cqw 0.8cqw 1.4cqw;
+  border-radius: 4cqw;
+}
+.device-phone .device-screen {
+  aspect-ratio: 390 / 844;
+  border-radius: 1.8cqw;
+}
+.device-phone .device-camera {
+  top: 0.85cqw;
+  width: 3.5cqw;
+  height: 0.65cqw;
+  left: calc(50% - 1.75cqw);
+  border-radius: 1cqw;
+  background: #070809;
+}
+.device-phone .device-body::after {
+  content: "";
+  position: absolute;
+  width: 30%;
+  height: 0.25cqw;
+  bottom: 0.45cqw;
+  left: 35%;
+  border-radius: 1cqw;
+  background: #85888b;
+}
+.device-tv {
+  width: 84%;
+}
+.device-tv .device-body {
+  padding: 0.6cqw 0.6cqw 1.1cqw;
+  border-radius: 0.4cqw;
+}
+.device-tv .device-screen {
+  aspect-ratio: 16 / 9;
+  border-radius: 0;
+}
+.device-tv .device-camera {
+  top: auto;
+  bottom: 0.35cqw;
+  background: #c5c5c5;
+  width: 0.25cqw;
+  height: 0.25cqw;
+}
+.device-feet {
+  height: 4cqw;
+  width: 75%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.device-feet::before,
+.device-feet::after {
+  content: "";
+  width: 1cqw;
+  height: 100%;
+  background: linear-gradient(90deg, #18191b, #6c6e71, #1a1b1d);
+  transform: skewX(-28deg);
+}
+.device-feet::after {
+  transform: skewX(28deg);
+}
+.scene-helga {
+  --studio: #353332;
+  --floor: #62584c;
+  --light: #bba991;
+  --scene-ratio: 0.86854;
+}
+.scene-helga .device-laptop {
+  transform: translate(-50%, -42%) rotate(-4deg);
+}
+.scene-receptionist {
+  --studio: #e1d8ca;
+  --floor: #c3b49f;
+  --light: #fff6dc;
+  --scene-ratio: 0.86854;
+}
+.scene-documents {
+  --studio: #dbdad6;
+  --floor: #bcbab3;
+  --light: #fff;
+}
+.scene-documents .device-laptop {
+  transform: translate(-50%, -44%) rotate(3deg);
+}
+.scene-rfp {
+  --studio: #c9d0d5;
+  --floor: #9da9b2;
+  --light: #f2f8ff;
+  --scene-ratio: 0.86854;
+}
+.scene-cms {
+  --studio: #d1c1ad;
+  --floor: #a08e79;
+  --light: #fff3db;
+}
+.scene-move-v {
+  --studio: #232a36;
+  --floor: #111721;
+  --light: #73829d;
+}
+.scene-move-v .device-studio::before {
+  background: radial-gradient(ellipse at 70% 45%, #a2bed84a, transparent 50%);
+}
+.scene-ensemble .device-tv {
+  width: 75%;
+  top: 9%;
+  left: 4%;
+  transform: none;
+}
+.scene-ensemble .device-tablet {
+  width: 26%;
+  top: auto;
+  bottom: 6%;
+  left: 13%;
+  transform: rotate(-6deg);
+}
+.scene-ensemble .device-phone {
+  width: 16%;
+  top: auto;
+  bottom: 5%;
+  left: auto;
+  right: 4%;
+  transform: rotate(5deg);
+}
+.scene-ensemble .device-phone .device-body {
+  padding: 1.3cqw 0.4cqw 0.8cqw;
+  border-radius: 1.8cqw;
+}
+.scene-ensemble .device-phone .device-screen {
+  border-radius: 0.8cqw;
+}
+.scene-ensemble .device-phone .device-camera {
+  top: 0.45cqw;
+  width: 1.6cqw;
+  height: 0.3cqw;
+  left: calc(50% - 0.8cqw);
+}
+.scene-ensemble .device-tablet .device-body {
+  padding: 0.6cqw;
+  border-radius: 1.2cqw;
+}
+.scene-ensemble .device-tablet .device-screen {
+  border-radius: 0.6cqw;
+}
+.scene-ensemble .device-tablet .device-camera {
+  width: 0.2cqw;
+  height: 0.2cqw;
+  top: 0.2cqw;
+}
+.device-scene[data-presentation="phone"] {
+  --scene-ratio: 0.86854;
+}

@@ -18,6 +18,8 @@ These are isolated portfolio adaptations. The receptionist does not place phone 
 
 Move V is a case study of the existing application, not an isolated remake. Phone and tablet images show its responsive web interface; the TV image shows the actual webOS / Tizen interface running in a browser against the development API. These captures do not establish native-device or app-store release readiness.
 
+Project screenshots appear inside responsive laptop, desktop, tablet, phone, and TV mockups throughout Home, About, Works, and project details. CSS draws the hardware and studio scenes around the unchanged screenshots; `object-fit: contain` preserves the complete interface. Move V's gallery preview combines TV, tablet, and phone views. See `docs/device-mockups.md` for the design and verification record.
+
 ## Architecture
 
 - Next.js static export with React; no Next server required.

@@ -134,7 +134,20 @@
       previews.every((img) => {
         const style = getComputedStyle(img);
         return img.naturalWidth > 0 && style.objectFit === "contain" &&
-          Math.abs(img.clientWidth / img.clientHeight - img.naturalWidth / img.naturalHeight) < 0.02;
+          !!img.closest(".device-screen");
+      }),
+    );
+    record(
+      "Every project is presented inside a device",
+      items.every((item) => !!item.querySelector(".folio-device .device-screen img")),
+    );
+    record(
+      "Device bodies stay inside their scenes",
+      [...document.querySelectorAll(".folio-works-track .folio-device")].every((device) => {
+        const frame = device.getBoundingClientRect();
+        const scene = device.closest(".device-scene").getBoundingClientRect();
+        return frame.left >= scene.left - 1 && frame.right <= scene.right + 1 &&
+          frame.top >= scene.top - 1 && frame.bottom <= scene.bottom + 1;
       }),
     );
     if (!mobile) {
@@ -178,7 +191,8 @@
       record(
         `${slug}: all full screenshots load without cropping`,
         images.length > 0 && images.every((img) =>
-          img.naturalWidth > 0 && getComputedStyle(img).objectFit === "contain"),
+          img.naturalWidth > 0 && getComputedStyle(img).objectFit === "contain" &&
+          !!img.closest(".device-screen")),
       );
       const heading = detail.querySelector("h1");
       const range = document.createRange();
@@ -214,6 +228,11 @@
     document.querySelector(".folio-detail-back").click();
     await wait(() => !!document.querySelector(".folio-works-viewport"));
   }
+  record(
+    "Device scenes contain their positioning layers",
+    [...document.querySelectorAll(".device-scene")].every((scene) =>
+      getComputedStyle(scene).position !== "static"),
+  );
   record(
     "All loaded images valid",
     [...document.images]
