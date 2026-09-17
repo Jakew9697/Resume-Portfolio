@@ -8,10 +8,10 @@ export function AboutContent() {
         aria-label="About Jake — Portrait"
       >
         <img
-          src="/jake-worsham.jpg"
+          src="/jake-profile-pic-4k.jpg"
           alt="Jake Worsham"
-          width={460}
-          height={460}
+          width={1280}
+          height={1250}
         />
         <div className="folio-about-title">
           <h1 data-reveal>

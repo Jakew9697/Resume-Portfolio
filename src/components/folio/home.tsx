@@ -131,10 +131,10 @@ export function HomeContent() {
         </p>
         <img
           className="folio-intro-portrait"
-          src="/jake-worsham.jpg"
+          src="/jake-profile-pic-4k.jpg"
           alt="Jake Worsham"
-          width={460}
-          height={460}
+          width={1280}
+          height={1250}
         />
         <a className="folio-intro-link folio-inline-link" href="/about/">
           More about me <ArrowRight size={23} />
