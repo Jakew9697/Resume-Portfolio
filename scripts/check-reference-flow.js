@@ -116,13 +116,26 @@
   if (gallery) {
     const items = [...document.querySelectorAll(".folio-work-item")];
     record(
-      "Six unframed projects",
-      items.length === 6 &&
+      "Seven unframed projects",
+      items.length === 7 &&
         items.every(
           (item) =>
             getComputedStyle(item).boxShadow === "none" &&
             getComputedStyle(item).borderRadius === "0px",
         ),
+    );
+    const previews = [...document.querySelectorAll(".folio-work-image img")];
+    await Promise.all(previews.map((img) => {
+      img.loading = "eager";
+      return img.decode().catch(() => {});
+    }));
+    record(
+      "Every preview preserves the complete screenshot",
+      previews.every((img) => {
+        const style = getComputedStyle(img);
+        return img.naturalWidth > 0 && style.objectFit === "contain" &&
+          Math.abs(img.clientWidth / img.clientHeight - img.naturalWidth / img.naturalHeight) < 0.02;
+      }),
     );
     if (!mobile) {
       gallery.scrollLeft = 0;
@@ -154,8 +167,18 @@
       record(
         `${slug}: native live-demo link`,
         [...detail.querySelectorAll("a")].some(
-          (a) => a.getAttribute("href") === `/${slug}/`,
+          (a) => a.getAttribute("href") === (slug === "move-v" ? "https://move-v.app/" : `/${slug}/`),
         ),
+      );
+      const images = [...detail.querySelectorAll(".folio-detail-gallery img")];
+      await Promise.all(images.map((img) => {
+        img.loading = "eager";
+        return img.decode().catch(() => {});
+      }));
+      record(
+        `${slug}: all full screenshots load without cropping`,
+        images.length > 0 && images.every((img) =>
+          img.naturalWidth > 0 && getComputedStyle(img).objectFit === "contain"),
       );
       const heading = detail.querySelector("h1");
       const range = document.createRange();

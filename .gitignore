@@ -48,6 +48,7 @@ next-env.d.ts
 /evidence/*.webm
 /evidence/*session*
 /evidence/screenshots/
+/evidence/move-v-tv-preview/
 /evidence/*.pdf
 /evidence/*.csv
 /evidence/*.mp3

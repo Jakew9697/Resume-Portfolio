@@ -1,4 +1,17 @@
-export const projects = [
+export type PortfolioProject = {
+  slug: string;
+  name: string;
+  category: string;
+  year: string;
+  scope: string[];
+  overview: string;
+  features: string[];
+  technology: string;
+  liveUrl?: string;
+  images?: { src: string; alt: string; width: number; height: number; caption: string }[];
+};
+
+export const projects: PortfolioProject[] = [
   {
     slug: "prospects",
     name: "Prospects",
@@ -30,6 +43,29 @@ export const projects = [
       "Generate and review a draft",
     ],
     technology: "Claude / Transcribe / Polly / React",
+  },
+  {
+    slug: "move-v",
+    name: "Move V",
+    category: "Cross-platform streaming",
+    year: "2026",
+    scope: ["Product design", "Cross-screen experience"],
+    overview:
+      "A cinema streaming platform designed across web, phones, tablets, and connected TVs. A shared catalog and playback system support interfaces tailored to browsing by mouse, touch, or remote.",
+    features: [
+      "Discover films and series in a shared catalog",
+      "Browse on desktop, phone, and tablet",
+      "Explore interfaces designed for connected TVs",
+      "Keep profiles, saved titles, and watch progress together",
+    ],
+    technology: "Next.js / React Native / Expo / TV interfaces / AWS",
+    liveUrl: "https://move-v.app/",
+    images: [
+      { src: "/projects/move-v-desktop.png", alt: "Move V populated desktop catalog", width: 1440, height: 1000, caption: "Desktop — the populated development catalog" },
+      { src: "/projects/move-v-tv.png", alt: "Move V television interface with its film catalog", width: 1920, height: 1080, caption: "TV — webOS / Tizen interface, browser preview" },
+      { src: "/projects/move-v-tablet.png", alt: "Move V catalog on a tablet-sized screen", width: 1024, height: 768, caption: "Tablet — responsive web interface" },
+      { src: "/projects/move-v-mobile.png", alt: "Move V catalog on a phone-sized screen", width: 390, height: 844, caption: "Phone — responsive web interface" },
+    ],
   },
   {
     slug: "receptionist",
@@ -96,4 +132,3 @@ export const projects = [
     technology: "React / Publishing / DynamoDB / AWS",
   },
 ];
-export type PortfolioProject = (typeof projects)[number];

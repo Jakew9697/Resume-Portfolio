@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "contact/",
     ...projects.flatMap((project) => [
       `works/${project.slug}/`,
-      `${project.slug}/`,
+      ...(project.liveUrl ? [] : [`${project.slug}/`]),
     ]),
   ].map((path) => ({ url: `https://jakeworsham.syncgr.com/${path}` }));
 }

@@ -151,10 +151,10 @@ export function HomeContent() {
           <span>WORK</span>
         </div>
         <div className="folio-mosaic" aria-hidden="true">
-          {projects.map((project) => (
+          {projects.slice(0, 6).map((project) => (
             <img
               key={project.slug}
-              src={`/projects/${project.slug}.webp`}
+              src={project.images?.[0].src ?? `/projects/${project.slug}.webp`}
               alt=""
               width={1440}
               height={1000}
@@ -189,7 +189,7 @@ export function HomeContent() {
           {projects.slice(0, 4).map((project) => (
             <img
               key={project.slug}
-              src={`/projects/${project.slug}.webp`}
+              src={project.images?.[0].src ?? `/projects/${project.slug}.webp`}
               alt=""
               width={1440}
               height={1000}

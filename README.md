@@ -2,7 +2,7 @@
 
 Live: https://jakeworsham.syncgr.com
 
-Six independent, functional browser demonstrations rebuilt from the projects on Jake's resume. Prospects follows the current Sync portal design. Helga follows its original obsidian, amber, and Fraunces interface. All businesses and records are fictional.
+Seven portfolio projects: six independent, functional browser demonstrations rebuilt from the projects on Jake's resume, plus Move V's cross-platform streaming application. Prospects follows the current Sync portal design. Helga follows its original obsidian, amber, and Fraunces interface. Businesses and records in the six isolated demonstrations are fictional.
 
 | Demo | Working path |
 |---|---|
@@ -12,8 +12,11 @@ Six independent, functional browser demonstrations rebuilt from the projects on 
 | Documents | Notes → generated copy → edits → demo signature → paginated PDF |
 | RFP | TXT/Markdown/text PDF references → grounded sections → edits → response PDF |
 | Content studio | Editable page → preview → saved draft → published snapshot |
+| Move V | Authenticated dev catalog captures across desktop, tablet, phone, and TV interface; links to the live streaming platform |
 
 These are isolated portfolio adaptations. The receptionist does not place phone calls. Email drafts are not sent. Signatures are demonstration acknowledgments. CMS publication is scoped to the visitor's workspace, not a public customer website. Helga's original desktop services are adapted to browser recording and AWS services.
+
+Move V is a case study of the existing application, not an isolated remake. Phone and tablet images show its responsive web interface; the TV image shows the actual webOS / Tizen interface running in a browser against the development API. These captures do not establish native-device or app-store release readiness.
 
 ## Architecture
 

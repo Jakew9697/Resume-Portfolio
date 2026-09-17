@@ -155,10 +155,10 @@ export function Works({ initialSlug }: { initialSlug?: string }) {
               >
                 <div className="folio-work-image">
                   <img
-                    src={`/projects/${project.slug}.webp`}
-                    alt={`${project.name} application`}
-                    width={1440}
-                    height={1000}
+                    src={project.images?.[0].src ?? `/projects/${project.slug}.webp`}
+                    alt={project.images?.[0].alt ?? `${project.name} application`}
+                    width={project.images?.[0].width ?? 1440}
+                    height={project.images?.[0].height ?? 1000}
                     loading={index < 4 ? "eager" : "lazy"}
                   />
                 </div>
@@ -234,7 +234,7 @@ function ProjectDetail({
               <div>
                 <dt>Preview</dt>
                 <dd>
-                  <a href={`/${project.slug}/`}>
+                  <a href={project.liveUrl ?? `/${project.slug}/`}>
                     See It Live <ArrowRight size={15} />
                   </a>
                 </dd>
@@ -265,23 +265,18 @@ function ProjectDetail({
         tabIndex={0}
         aria-label={`${project.name} project gallery`}
       >
-        <figure>
-          <img
-            src={`/projects/${project.slug}.webp`}
-            alt={`${project.name} full application preview`}
-            width={1440}
-            height={1000}
-          />
-        </figure>
-        <figure className="folio-detail-closeup">
-          <img
-            src={`/projects/${project.slug}.webp`}
-            alt={`A closer look at the ${project.name} interface`}
-            width={1440}
-            height={1000}
-          />
-          <figcaption>{project.technology}</figcaption>
-        </figure>
+        {(project.images ?? [{
+          src: `/projects/${project.slug}.webp`,
+          alt: `${project.name} full application preview`,
+          width: 1440,
+          height: 1000,
+          caption: project.technology,
+        }]).map((preview) => (
+          <figure key={preview.src}>
+            <img src={preview.src} alt={preview.alt} width={preview.width} height={preview.height} />
+            <figcaption>{preview.caption}</figcaption>
+          </figure>
+        ))}
         <div className="folio-detail-features">
           <span className="folio-eyebrow">Try the experience</span>
           {project.features.map((feature, index) => (
@@ -290,7 +285,7 @@ function ProjectDetail({
               {feature}
             </p>
           ))}
-          <a href={`/${project.slug}/`}>
+          <a href={project.liveUrl ?? `/${project.slug}/`}>
             Open {project.name} <ArrowRight size={26} />
           </a>
         </div>
